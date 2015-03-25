@@ -1,4 +1,5 @@
 # WorkingScholar
+[![Stories in Ready](https://badge.waffle.io/WorkingScholar/workingscholar.svg?label=ready&title=Ready)](http://waffle.io/WorkingScholar/workingscholar)
 
 WorkingScholar is a micro-consulting platform that empowers students to
 build their professional experience.
