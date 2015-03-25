@@ -25,6 +25,26 @@ brew upgrade && brew update && brew cleanup
 brew install postgresql
 ```
 
+Enable PostgreSQL server auto-start on boot:
+
+```sh
+cp /usr/local/Cellar/postgresql/VERSION/homebrew.mxcl.postgresql.plist ~/Library/LaunchAgents/
+```
+
+where VERSION is the installed version of PostgreSQL.
+
+Manage PogstreSQL (and other launch agents) with [Lunchy](https://github.com/eddiezane/lunchy):
+
+```sh
+gem install lunchy
+```
+
+Start the PostgreSQL server:
+
+```sh
+lunchy start postgres
+```
+
 Create the necessary databases (usually `development`):
 
 ```
@@ -55,4 +75,4 @@ Navigate to [http://localhost:3000](http://localhost:3000) and start hacking on 
 
 ## License
 
-Copyright (c) 2015 Working Scholar.  All rights reserved.
+Copyright (c) 2015 WorkingScholar.  All rights reserved.
