@@ -45,6 +45,10 @@ Start the PostgreSQL server:
 lunchy start postgres
 ```
 
+> **Note**: after a machine reboot, Lunchy is no longer required as the 
+PostgreSQL server will start automatically thanks to its launch agent in
+`~/Library/LaunchAgents`.
+
 Create the necessary databases (usually `development`):
 
 ```
