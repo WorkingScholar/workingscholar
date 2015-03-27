@@ -17,6 +17,8 @@ Want to contribute to WorkingScholar?  We welcome
 
 ### Requirements
 
+#### Database
+
 We use [PostgreSQL](http://www.postgresql.org/) as our datastore.
 
 On OS X, install PostgreSQL through [Homebrew](http://brew.sh/):
@@ -60,12 +62,18 @@ where ENVIRONMENT is one of `development`, `test`, `production`.
 
 > **Note**: the database name __**is**__ case-sensitive.
 
+#### Dependency Managers
+
+- [Bundler](http://bundler.io/)
+- [npm](https://www.npmjs.com/package/npm) (Bundled with [NodeJS](https://nodejs.org/))
+
 ### Installation & Setup
 
 Install the application dependencies with:
 
 ```sh
 bundle install --path vendor
+npm install
 ```
 
 ### Running the Application

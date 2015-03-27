@@ -8,3 +8,6 @@
 
 # Ignore vendored gems
 vendor/ruby
+
+# Ignore node modules
+/node_modules

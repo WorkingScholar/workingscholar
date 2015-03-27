@@ -1,0 +1,14 @@
+{
+  "name": "WorkingScholar",
+  "version": "0.1.0",
+  "description": "A micro-consulting platform that empowers students to build their professional experience.",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WorkingScholar/workingscholar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WorkingScholar/workingscholar/issues"
+  },
+  "homepage": "https://github.com/WorkingScholar/workingscholar"
+}
