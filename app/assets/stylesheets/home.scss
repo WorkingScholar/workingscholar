@@ -1,3 +1,89 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #26a69a;
+}
+
+.started {
+  padding: 10%;
+
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+
+
+  .parallax-container .section {
+    width: 100%;
+    background-image: image-url("step.jpg");
+    background-size: cover;
+    background-position: 50%;
+    background-attachment: fixed;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+div.hero {
+  min-height:50vh;
+  width: 100%;
+    background-image: image-url("step.jpg");
+    background-size: cover;
+    background-position: 50%;
+    background-attachment: fixed;
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.learn_more {
+  padding: 2%;
+}
+
+div.why {
+min-height:100vh;
+width: 100%;
+  background-image: image-url("background.jpg");
+  background-size: cover;
+  background-position: 50%;
+  background-attachment: fixed;
+
+}
+
+div.why h4{
+  color: white;
+}
+
+div.why p{
+  color: white;
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+
+footer.page-footer {
+  margin: 0;
+}
