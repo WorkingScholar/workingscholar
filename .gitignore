@@ -8,3 +8,6 @@
 
 # Ignore vendored gems
 vendor/ruby
+
+# Ignore .env settings for local development
+.env
