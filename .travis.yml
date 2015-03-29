@@ -1,0 +1,8 @@
+language: ruby
+rvm:
+  - "2.2.0"
+bundler_args: --without production
+notifications:
+  email:
+    - stuart.crust@gmail.com
+    - sheretr@gmail.com
