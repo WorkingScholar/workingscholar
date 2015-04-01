@@ -11,4 +11,8 @@ Rails.application.routes.draw do
              controllers: {
                registrations: "students/registrations"
              }
+
+  resources :schools, only: [:index]
+
+  resources :majors, only: [:index]
 end
