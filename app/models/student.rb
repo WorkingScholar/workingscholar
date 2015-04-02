@@ -9,8 +9,10 @@ class Student < ActiveRecord::Base
   validates :username, uniqueness: { case_sensitive: false }
 
   belongs_to :school, counter_cache: true
+  delegate :school_name, to: :school, allow_nil: true
 
   belongs_to :major, counter_cache: true
+  delegate :major_name, to: :major, allow_nil: true
 
   def gravatar_image
     Gravatar.new(email).image_url(s: 100)
