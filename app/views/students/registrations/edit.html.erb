@@ -1,0 +1,150 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <div class="section">
+        <%= form_for resource,
+              as: resource_name,
+              url: registration_path(resource_name),
+              html: { method: :put } do |f| %>
+
+          <%= devise_error_messages! %>
+
+          <div class="col s2">
+            <div class="section">
+
+              <div class="avatar">
+                <img src="<%= resource.gravatar_image %>" alt="avatar" class="responsive-img circle">
+              </div>
+
+              <div class="collection">
+
+                <a class="collection-item" href="https://linkedin.com" target="_blank">
+                  <i class="fa fa-linkedin-square"></i> LinkedIn
+                </a>
+
+                <a class="collection-item" href="https://github.com" target="_blank">
+                  <i class="fa fa-github"></i> GitHub
+                </a>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col s10">
+            <div class="section">
+
+              <div class="input-field col s5">
+                <%= f.text_field :first_name, class: "validate" %>
+                <%= f.label :first_name %>
+              </div>
+
+              <div class="input-field col s5">
+                <%= f.text_field :last_name, class: "validate" %>
+                <%= f.label :last_name %>
+              </div>
+
+              <div class="input-field col s10">
+                <%= f.text_field :username, class: "validate" %>
+                <%= f.label :username %>
+              </div>
+
+              <div class="input-field col s10">
+                <%= f.email_field :email, class: "validate" %>
+                <%= f.label :email %>
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                  <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                <% end %>
+              </div>
+
+              <div class="input-field col s10">
+                <%= f.password_field :password, autocomplete: "off", class: "validate" %>
+                <%= f.label :password, "New password (leave blank if you don't want to change it)" %>
+              </div>
+
+              <div class="input-field col s10">
+                <%= f.password_field :password_confirmation, autocomplete: "off", class: "validate" %>
+                <%= f.label :password_confirmation, "Confirm new password" %>
+              </div>
+
+              <div class="input-field col s10">
+                <%= f.password_field :current_password, autocomplete: "off", class: "validate" %>
+                <%= f.label :current_password %>
+              </div>
+
+              <div class="input-field col s5">
+                <%= f.text_field :school_name, class: "validate" %>
+                <%= f.label :school %>
+              </div>
+
+              <div class="input-field col s5">
+                <%= f.text_field :major_name, class: "validate" %>
+                <%= f.label :major %>
+              </div>
+
+              <div class="col s3" style="margin-top: 1rem">
+                <%= f.label :graduation_year %>
+                <div class="select-wrapper">
+                  <%= select_year resource.graduation_year,
+                        {
+                          prefix: "student",
+                          field_name: "graduation_year",
+                          start_year: 10.years.from_now.year,
+                          end_year: 1950,
+                          prompt: "Select graduation year"
+                        },
+                        {
+                          class: "browser-default"
+                        } %>
+                </div>
+              </div>
+
+
+              <div class="actions col s10">
+                <div class="section">
+                  <button class="btn waves-effect waves-light" type="submit" name="action">Update
+                    <i class="mdi-content-send right"></i>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col s8 offset-s2">
+            <div class="divider"></div>
+          </div>
+
+          <div class="col s12">
+            <div class="section">
+
+              <div class="col s4 offset-s2">
+                <h5 class="red-text darken-2">Delete Account</h5>
+                <label><strong>Warning</strong>: Deleting your account is irreversible</label>
+              </div>
+
+              <div class="col s6">
+                <div class="valign-wrapper">
+                  <%= link_to registration_path(resource_name),
+                    data: { confirm: "Are you sure you want to delete your account? Your profile and any active applications will be deleted as well." },
+                    method: :delete,
+                    class: "red darken-2 btn waves-effect waves-light valign",
+                    style: "margin-top: 15px" do %>
+                    Delete Account<i class="mdi-action-highlight-remove right"></i>
+                  <% end %>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        <% end %>
+
+      </div>
+    </div>
+
+  </div>
+
+  <%= link_to "Back", :back %>
+
+</div>

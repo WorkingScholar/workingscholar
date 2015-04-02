@@ -1,3 +1,5 @@
+require "gravatar"
+
 class Student < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
@@ -9,4 +11,8 @@ class Student < ActiveRecord::Base
   belongs_to :school, counter_cache: true
 
   belongs_to :major, counter_cache: true
+
+  def gravatar_image
+    Gravatar.new(email).image_url(s: 100)
+  end
 end
