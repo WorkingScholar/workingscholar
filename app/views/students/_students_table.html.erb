@@ -1,0 +1,23 @@
+<table class="hoverable">
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>School</th>
+      <th>Major</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% students.each do |student| %>
+      <tr>
+        <td>
+          <a href="<%= student_path student.username %>">
+            <%= student.full_name %></td>
+          </a>
+        <td><%= student.email %></td>
+        <td><%= student.school_name %></td>
+        <td><%= student.major_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
