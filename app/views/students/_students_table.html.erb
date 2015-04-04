@@ -1,0 +1,36 @@
+<table class="hoverable">
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>School</th>
+      <th>Major</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% students.each do |student| %>
+      <tr>
+        <td>
+          <a href="<%= student_path student.username %>">
+            <%= student.full_name %>
+          </a>
+        </td>
+        <td><%= student.account_email %></td>
+        <td>
+          <% if student.school_name %>
+            <%= student.school_name %>
+          <% else %>
+            <div class="grey-text">No information</div>
+          <% end %>
+        </td>
+        <td>
+          <% if student.major_name %>
+            <%= student.major_name %>
+          <% else %>
+            <div class="grey-text">No information</div>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
