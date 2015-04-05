@@ -2,6 +2,7 @@ AllCops:
   Exclude:
     - "bin/*"
     - "vendor/**/*"
+    - "db/migrate/*"
     - "db/schema.rb"
   RunRailsCops: true
 
@@ -11,7 +12,13 @@ Metrics/LineLength:
 Style/ClassAndModuleChildren:
   Enabled: false
 
+Style/CommentIndentation:
+  Enabled: false
+
 Style/Documentation:
+  Enabled: false
+
+Style/IndentationConsistency:
   Enabled: false
 
 Style/StringLiterals:

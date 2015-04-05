@@ -1,1 +1,1 @@
-//= require materialize/materialize
+//= require materializecss
