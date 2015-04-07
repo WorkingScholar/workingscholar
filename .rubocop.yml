@@ -3,6 +3,7 @@ AllCops:
     - "bin/*"
     - "vendor/**/*"
     - "db/schema.rb"
+    - "db/migrate/*"
   RunRailsCops: true
 
 Metrics/LineLength:
