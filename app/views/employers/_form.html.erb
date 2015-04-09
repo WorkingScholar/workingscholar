@@ -1,9 +1,21 @@
-<%= form_for(@employer) do |f| %>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<div class="row">
+  <%= form_for(@employer) do |f| %>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
+      <div class="input-field col s12">
+        <%= f.label :username %><br>
+        <%= f.text_field :username %>
+      </div>
+    </div>
+
+
+      <div class="actions">
+        <button class="btn waves-effect waves-light" type="submit" name="action">Update Profile
+          <i class="mdi-content-send right"></i>
+        </button>
+      </div>
+  <% end %>
+</div>
