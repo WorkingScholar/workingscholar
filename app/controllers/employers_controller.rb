@@ -1,5 +1,5 @@
 class EmployersController < ApplicationController
-  skip_before_action :authenticate_account!, only: [:index, :show]
+  skip_before_action :authenticate_account!, only: [:index]
 
   def index
     @employers = Employer.all
