@@ -1,3 +1,5 @@
+require "gravatar-ultimate"
+
 class Student < ActiveRecord::Base
   validates :username, uniqueness: { case_sensitive: false }
   validates :first_name, presence: true
@@ -14,5 +16,9 @@ class Student < ActiveRecord::Base
 
   def full_name
     "#{first_name} #{last_name}"
+  end
+
+  def avatar_url
+    Gravatar.new(account_email).image_url(s: 100)
   end
 end
