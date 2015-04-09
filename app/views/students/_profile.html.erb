@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col s2">
+    <div class="collection">
+      <a class="collection-item" href="https://linkedin.com" target="_blank">
+        <i class="fa fa-linkedin-square"></i> LinkedIn
+      </a>
+
+      <a class="collection-item" href="https://github.com" target="_blank">
+        <i class="fa fa-github"></i> GitHub
+      </a>
+    </div>
+  </div>
+  <div class="col s9 offset-s1">
+    <table>
+      <tbody>
+        <tr>
+          <td>School</td>
+          <% if student.school_name %>
+            <td><a href="#"><%= student.school_name %></a></td>
+          <% else %>
+            <td class="grey-text lighten-2">No information</td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>Major</td>
+          <% if student.major_name %>
+            <td><a href="#"><%= student.major_name %></a></td>
+          <% else %>
+            <td class="grey-text lighten-2">No information</td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>Graduation year</td>
+          <% if student.graduation_year %>
+            <td><%= student.graduation_year %></td>
+          <% else %>
+            <td class="grey-text lighten-2">No information</td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12" style="position: relative">
+      <div class="section">
+
+        <div class="col s2">
+          <div class="avatar">
+            <img src="<%= @student.avatar_url %>" alt="avatar" class="responsive-img circle">
+          </div>
+        </div>
+        <div class="col s10">
+          <h5 style="position: absolute; bottom: 0;"><%= @student.full_name %></h5>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <div class="section">
+        <%= render "profile", student: @student %>
+      </div>
+    </div>
+  </div>
+</div>

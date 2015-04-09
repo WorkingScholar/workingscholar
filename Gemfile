@@ -27,6 +27,8 @@ gem "jbuilder", "~> 2.0"
 # Use devise for user authentication
 gem "devise"
 
+gem "gravatar-ultimate"
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem "sdoc", "~> 0.4.0"
