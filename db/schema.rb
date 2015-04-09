@@ -25,9 +25,11 @@ ActiveRecord::Schema.define(version: 20150410035834) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.integer  "student_id"
+    t.integer  "employer_id"
   end
 
   add_index "accounts", ["email"], name: "index_accounts_on_email", unique: true, using: :btree
+  add_index "accounts", ["employer_id"], name: "index_accounts_on_employer_id", using: :btree
   add_index "accounts", ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true, using: :btree
   add_index "accounts", ["student_id"], name: "index_accounts_on_student_id", using: :btree
 
@@ -72,10 +74,6 @@ ActiveRecord::Schema.define(version: 20150410035834) do
   add_index "students", ["major_id"], name: "index_students_on_major_id", using: :btree
   add_index "students", ["school_id"], name: "index_students_on_school_id", using: :btree
 
-  add_foreign_key "accounts", "students"
-  add_foreign_key "students", "majors"
-  add_foreign_key "students", "schools"
-
   create_table "employers", force: :cascade do |t|
     t.string   "email"
     t.string   "name"
@@ -83,4 +81,9 @@ ActiveRecord::Schema.define(version: 20150410035834) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "accounts", "students"
+  add_foreign_key "students", "majors"
+  add_foreign_key "students", "schools"
+  add_foreign_key "accounts", "employers"
 end
