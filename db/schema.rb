@@ -75,7 +75,6 @@ ActiveRecord::Schema.define(version: 20150410035834) do
   add_index "students", ["school_id"], name: "index_students_on_school_id", using: :btree
 
   create_table "employers", force: :cascade do |t|
-    t.string   "email"
     t.string   "name"
     t.string   "username"
     t.datetime "created_at", null: false
