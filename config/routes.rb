@@ -18,4 +18,6 @@ Rails.application.routes.draw do
     patch "account/password",      to: "devise/passwords#update"
     put "account/password",        to: "devise/passwords#upate"
   end
+
+  resources :students, only: [:index, :show, :edit, :update]
 end
