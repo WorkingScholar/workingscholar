@@ -18,13 +18,13 @@ class EmployersController < ApplicationController
     if @employer.update_attributes(employer_params)
 
     else
-      render 'edit'
+      render "edit"
     end
 
     redirect_to employers_path
   end
 
   def employer_params
-    params.require(:employer).permit(:name, :email)
+    params.require(:employer).permit(:name, :username, :email)
   end
 end

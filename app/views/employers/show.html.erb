@@ -1,10 +1,17 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
 <h2>Employer Profile</h2>
 
+
 <p>
   <strong>Name:</strong>
   <%= @employer.name %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @employer.username %>
 </p>
 
 <p>
@@ -14,3 +21,4 @@
 
 <%= link_to 'Edit', edit_employer_path(@employer) %>
 <%= link_to 'Back', employers_path %>
+</div>
