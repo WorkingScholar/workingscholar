@@ -75,4 +75,12 @@ ActiveRecord::Schema.define(version: 20150410035834) do
   add_foreign_key "accounts", "students"
   add_foreign_key "students", "majors"
   add_foreign_key "students", "schools"
+
+  create_table "employers", force: :cascade do |t|
+    t.string   "email"
+    t.string   "name"
+    t.string   "username"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 end
