@@ -3,4 +3,5 @@ class Account < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
 
   belongs_to :student
+  delegate :username, to: :student, prefix: true
 end
