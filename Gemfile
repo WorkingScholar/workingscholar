@@ -27,6 +27,9 @@ gem "jbuilder", "~> 2.0"
 # Use devise for user authentication
 gem "devise"
 
+# URL slugging and permalinking
+gem "friendly_id", "~> 5.1.0"
+
 gem "gravatar-ultimate"
 
 group :doc do
