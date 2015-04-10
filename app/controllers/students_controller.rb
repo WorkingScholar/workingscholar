@@ -8,12 +8,11 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @student = Student.find_by(username: params[:id])
   end
 
   private
 
     def set_student
-      @student = Student.find_by(username: params[:id])
+      @student = Student.friendly.find(params[:id])
     end
 end
