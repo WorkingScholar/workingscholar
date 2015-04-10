@@ -16,7 +16,7 @@ class EmployersController < ApplicationController
   def update
     @employer = Employer.find(params[:id])
     if @employer.update_attributes(employer_params)
-      render "show"
+      redirect_to employers_path, notice: "Succesfully updated your profile"
     else
       render "edit"
     end
