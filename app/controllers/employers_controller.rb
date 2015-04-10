@@ -16,12 +16,10 @@ class EmployersController < ApplicationController
   def update
     @employer = Employer.find(params[:id])
     if @employer.update_attributes(employer_params)
-
+      render "show"
     else
       render "edit"
     end
-
-    redirect_to employers_path
   end
 
   def employer_params
