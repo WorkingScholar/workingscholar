@@ -8,13 +8,13 @@
             <%= image_tag("swirl_pattern.png") %>
           </div>
         </div>
-        <div class="col s6">
+        <div class="col s5">
           <h4 style="position: absolute; bottom: 0;"><%= @employer.name %></h4>
         </div>
-        <div class="col s2" style="position: absolute; bottom: 0; right: 0;">
-          <button class="btn waves-effect waves-light" type="submit" name="action">Edit
-            <i class="mdi-content-send right"></i>
-          </button>
+        <div class="col s3" style="position: absolute; bottom: 0; right: 0;">
+          <%= link_to edit_employer_path, class: "btn waves-effect waves-light", method: :get do %>
+            Edit<i class="mdi-image-edit right"></i>
+          <% end %>
         </div>
       </div>
     </div>
