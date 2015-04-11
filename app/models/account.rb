@@ -4,4 +4,6 @@ class Account < ActiveRecord::Base
 
   belongs_to :student
   delegate :username, to: :student, prefix: true
+
+  belongs_to :employer
 end
