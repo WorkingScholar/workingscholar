@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(version: 20150410035834) do
   add_index "accounts", ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true, using: :btree
   add_index "accounts", ["student_id"], name: "index_accounts_on_student_id", using: :btree
 
+  create_table "employers", force: :cascade do |t|
+    t.string   "name"
+    t.string   "username"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
@@ -74,15 +81,8 @@ ActiveRecord::Schema.define(version: 20150410035834) do
   add_index "students", ["major_id"], name: "index_students_on_major_id", using: :btree
   add_index "students", ["school_id"], name: "index_students_on_school_id", using: :btree
 
-  create_table "employers", force: :cascade do |t|
-    t.string   "name"
-    t.string   "username"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+  add_foreign_key "accounts", "employers"
   add_foreign_key "accounts", "students"
   add_foreign_key "students", "majors"
   add_foreign_key "students", "schools"
-  add_foreign_key "accounts", "employers"
 end
