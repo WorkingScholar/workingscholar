@@ -4,7 +4,7 @@ class Student < ActiveRecord::Base
   extend FriendlyId
   friendly_id :username
 
-  validates :username, uniqueness: { case_sensitive: false }
+  validates :username, presence: true, uniqueness: { case_sensitive: false }
   validates :first_name, presence: true
   validates :last_name, presence: true
 
