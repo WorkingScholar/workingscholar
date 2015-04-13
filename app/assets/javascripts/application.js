@@ -18,3 +18,4 @@
 //= require typeahead
 //
 //= require schools
+//= require majors

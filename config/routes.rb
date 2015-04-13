@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   resources :schools, only: [:index]
 
+  resources :majors, only: [:index]
+
   resources :students, only: [:index, :show, :edit, :update]
 
   resources :employers, only: [:index, :show, :edit, :update]
