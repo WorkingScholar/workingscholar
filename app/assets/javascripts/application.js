@@ -16,3 +16,5 @@
 //
 //= require materialize
 //= require typeahead
+//
+//= require schools
