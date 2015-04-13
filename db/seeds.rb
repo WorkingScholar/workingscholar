@@ -36,3 +36,32 @@ School.create([
   { name: "Wilfrid Laurier University" },
   { name: "York University" }
 ])
+
+Major.create([
+  { name: "Chemical Engineering" },
+  { name: "Civil Engineering" },
+  { name: "Computer Engineering" },
+  { name: "Electrical Engineering" },
+  { name: "Systems Engineering" },
+  { name: "Materials Engineering" },
+  { name: "Mechanical Engineering" },
+  { name: "Mineral Engineering" },
+  { name: "Engineering Science" },
+  { name: "Electrical and Computer Engineering" },
+  { name: "Architectural Studies" },
+  { name: "Visual Studies" },
+  { name: "Computer Science" },
+  { name: "Humanities" },
+  { name: "Life Sciences" },
+  { name: "Physical and Mathematical Sciences" },
+  { name: "Rotman Commerce" },
+  { name: "Social Science" },
+  { name: "Physical and Health Education" },
+  { name: "Kinesiology" },
+  { name: "Artists Diploma" },
+  { name: "Composition" },
+  { name: "Comprehensive" },
+  { name: "History & Theory" },
+  { name: "Music Education" },
+  { name: "Performance" }
+])
