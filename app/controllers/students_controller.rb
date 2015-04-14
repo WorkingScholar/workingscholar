@@ -4,7 +4,7 @@ class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update]
 
   def index
-    @students = Student.all.includes(:account, :school, :major)
+    @students = Student.all.includes(:account, :school, :major, :resume_entries)
   end
 
   def show
