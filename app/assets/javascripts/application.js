@@ -19,3 +19,5 @@
 //
 //= require schools
 //= require majors
+//
+//= require resume_entries
