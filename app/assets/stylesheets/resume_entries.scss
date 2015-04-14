@@ -1,0 +1,7 @@
+a.entry-actions {
+  color: $secondary-color;
+
+  &:hover {
+    color: lighten($secondary-color, 20%);
+  }
+}
