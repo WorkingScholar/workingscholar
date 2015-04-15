@@ -11,7 +11,11 @@
 <% end %>
 <div style="position: fixed; bottom: 9px; right: 24px;">
   <%= link_to new_student_resume_entry_path(student),
-              class: "btn-floating btn-large waves-effect waves-light blue-grey" do %>
+              data: { position: "left",
+                      delay: "50",
+                      tooltip: "Create new entry"
+              },
+              class: "tooltipped btn-floating btn-large waves-effect waves-light" do %>
     <i class="mdi-content-add"></i>
   <% end %>
 </div>
