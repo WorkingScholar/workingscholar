@@ -1,0 +1,15 @@
+$logo-height: 30px;
+$logo-spacing-margin: ($navbar-height - $logo-height) / 2;
+
+a.brand-logo {
+
+  img.logo-icon {
+    float: left;
+    height: $logo-height;
+    margin: $logo-spacing-margin 5px $logo-spacing-margin 0;
+  }
+
+  div.logo-text {
+    float: left;
+  }
+}
