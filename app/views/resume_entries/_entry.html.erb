@@ -20,23 +20,23 @@
         <% end %>
       </span>
       <div class="grey-text lighten-2">
-        <div class="company-name" style="float: left">
+        <div class="company-name">
           <% if entry.employer %>
-            <i class="fa fa-briefcase"></i> <a href="<%= employer_path(entry.employer) %>"><%= entry.employer_name %></a>
+            <i class="fa fa-briefcase"></i><a href="<%= employer_path(entry.employer) %>"><%= entry.employer_name %></a>
           <% else %>
-            <i class="fa fa-briefcase"></i> <%= entry.employer_name %></a>
+            <i class="fa fa-briefcase"></i><%= entry.employer_name %></a>
           <% end %>
         </div>
-        <div class="duration" style="float: left">
+        <div class="duration">
           <% if entry.start_date.present? && entry.end_date.present? %>
             <i class="fa fa-calendar-o"></i><%= entry.start_date %> to <%= entry.end_date %>
           <% else %>
-            <i class="fa fa-calendar-o"></i> <span class="grey-text lighten-2">No information</span>
+            <i class="fa fa-calendar-o"></i><span class="grey-text lighten-2">No information</span>
           <% end %>
         </div>
       </div>
     </div>
-    <div class="entry-body" style="clear: both">
+    <div class="entry-body">
       <p><%= render_markdown entry.description %></p>
     </div>
   </div>
