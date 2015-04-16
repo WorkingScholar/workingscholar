@@ -19,6 +19,10 @@ Rails.application.routes.draw do
     put "account/password",        to: "devise/passwords#upate"
   end
 
+  resources :schools, only: [:index]
+
+  resources :majors, only: [:index]
+
   resources :students, only: [:index, :show, :edit, :update]
 
   resources :employers, only: [:index, :show, :edit, :update]

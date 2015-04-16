@@ -13,4 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//
+//= require materialize
+//= require typeahead
+//
+//= require schools
+//= require majors
