@@ -1,9 +1,99 @@
 /*** Colors ***/
-$primary-color: #FFFFFF;
-$primary-color-light: lighten($primary-color, 15%) !default;
-$primary-color-dark: darken($primary-color, 15%) !default;
+$primary-color: #546e7a;
+$primary-color-light: lighten($primary-color, 15%);
+$primary-color-dark: darken($primary-color, 15%);
 
+$secondary-color: #607d8b;
+$success-color: #4caf50;
+$error-color: #f44336;
+$link-color: #039be5;
+
+
+/*** Badges ***/
+$badge-bg-color: $secondary-color;
+
+
+/*** Buttons ***/
+$button-bg-color-disabled: #DFDFDF;
+$button-color: $secondary-color;
+$button-color-disabled: #9F9F9F;
+$button-color-flat: #343434;
+$button-color-raised: #FFF;
+
+
+/*** Cards ***/
+$card-bg-color: #fff;
+
+
+/*** Collapsible ***/
+$collapsible-header-color: #fff;
+$collapsible-border-color: #ddd;
+
+
+/*** Dropdown ***/
+$dropdown-color: $secondary-color;
+
+
+/*** Forms ***/
+// Text Inputs + Textarea
+$input-border-color: #9e9e9e;
+$input-error-color: $error-color;
+$input-success-color: $success-color;
+$input-focus-color: $secondary-color;
+$input-disabled-color: rgba(0,0,0, .26);
+$input-disabled-solid-color: #BDBDBD;
+
+// Radio Buttons
+$radio-fill-color: $secondary-color;
+$radio-empty-color: #5a5a5a;
+
+// Switches
+$switch-bg-color: $secondary-color;
+$switch-checked-lever-bg: desaturate(lighten($secondary-color, 25%), 25%);
+$switch-unchecked-bg: #F1F1F1;
+$switch-unchecked-lever-bg: #818181;
+
+// Date Picker
+$datepicker-weekday-bg: darken($secondary_color, 7%);
+$datepicker-date-bg: $secondary_color;
+$datepicker-year: rgba(255, 255, 255, .4);
+$datepicker-focus: rgba(0,0,0, .05);
+$datepicker-selected: $secondary-color;
+$datepicker-selected-outfocus: desaturate(lighten($secondary-color, 35%), 15%);
+
+
+/*** Tabs ***/
+$tabs-underline-color: $primary-color-light;
+$tabs-text-color: $primary-color;
+$tabs-bg-color: #fff;
+
+
+/*** Tables ***/
+$table-border-color: #d0d0d0;
+$table-striped-color: #f2f2f2;
+
+
+/*** Typography ***/
+$off-black: rgba(0, 0, 0, 0.87);
+
+
+/*** Footer ***/
+$footer-bg-color: $primary-color;
+
+
+/*** Collections ***/
+$collection-border-color: #e0e0e0;
+$collection-bg-color: #fff;
+$collection-active-bg-color: $secondary-color;
+$collection-active-color: lighten($secondary-color, 55%);
+$collection-hover-bg-color: #ddd;
+
+
+/*** Progress Bar ***/
+$progress-bar-color: $secondary-color;
+
+
+/*** Vendor Overrides ***/
 // Materialize
 $roboto-font-path: "//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/font/roboto/";
 $icons-font-path: "//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/font/material-design-icons/";
-
