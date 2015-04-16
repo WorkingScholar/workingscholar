@@ -22,16 +22,18 @@
 </div>
 
 
-
-<div class="valign-wrapper">
+<div class = "container">
 
   <section id="team">
-    <h2 class="center">Team</h2>
-    <div class="row">
+
+  <div class="row">
+    <div class="col s12 center">
+      <h2>Team</h2>
+    </div>
       <div class="col s12 m6">
         <div class="center">
           <div class="headshot">
-            <%= image_tag("stuart.jpg") %>
+            <%= image_tag("stuart.jpg", class: "circle") %>
             <h5 class="center">Stuart Crust</h5>
 
             <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa saepe distinctio beatae placeat expedita eos autem, neque totam ut optio quasi illum explicabo quae nihil, facere adipisci iusto commodi voluptates!</p>
@@ -42,7 +44,7 @@
       <div class="col s12 m6">
         <div class="center">
           <div class="headshot">
-            <%= image_tag("sheret.jpg") %>
+            <%= image_tag("sheret.jpg", class: "circle") %>
             <h5 class="center">Sheret Ross</h5>
 
             <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, magni! At animi eveniet iure illo ratione perspiciatis, consequuntur cum beatae! Voluptas voluptates est dolorem eum provident. Totam aspernatur commodi alias!</p>
@@ -53,6 +55,7 @@
   </div>
 
 </section>
+</div>
 
 <section class="why" id="why">
   <div class="container">
@@ -60,30 +63,11 @@
 
       <div class="row">
         <div class="col s12 center">
-          <h2><i class="mdi-content-send brown-text"></i></h2>
           <h2>Why</h2>
-          <p class="center-align light">Small-to-medium sized businesses have demand for project-based labour but lack the financial means to utilize larger consulting and marketing firms. This includes preparing financial statements, basic web development, web or logo design, marketing strategy, social media implementation, and other creative and business aspects. That’s where we come in.
+          <p class="center-align light">Small-to-medium sized businesses have demand for project-based labour but lack the financial means to utilize larger consulting and marketing firms. <br><br>This includes preparing financial statements, basic web development, web/logo design, marketing strategy, social media implementation, and other creative and business aspects. <br><br>That’s where we come in.
           Students have a need to apply their theoretical and technical backgrounds to real-life scenarios to help launch their careers. We boast a vast array of talented students who can help your business grow. Just refine your search, and start hiring!
           </p>
-          <h4 class="learn_more">Learn More About Us!</h4>
-          <div class="learn">
-            <div class="row">
-              <form class="col s12">
-                <div class="row ">
-                  <div class="input-field col s6 ">
-                    <i class="mdi-action-account-circle prefix"></i>
-                    <input id="icon_prefix " type="text" class="validate ">
-                    <label for="icon_prefix ">Full Name</label>
-                  </div>
-                  <div class="input-field col s6">
-                    <i class="mdi-communication-phone prefix"></i>
-                    <input id="icon_email" type="email" class="validate">
-                    <label for="icon_email">Email</label>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
+        </div>
         </div>
       </div>
 
@@ -102,10 +86,10 @@
 
         <h5 class="center">The Student</h5>
 
-        <p class="light">Situation: Have you ever been turned down for a full-time summer position or entry-level job due to your lack of “professional” experiences? In today’s market, finding a job as a student without prior experience is nearly impossible.<br><br>
+        <p class="light center">Have you ever been turned down for a full-time summer position or entry-level job due to your lack of “professional” experiences? In today’s market, finding a job as a student without prior experience is nearly impossible.<br><br>
 
 
-          Fix: No more. We’ve got you covered. Sign up today to become one of our independent micro-consultants and have instant access to smaller firms looking to grow their business. </p>
+        No more. We’ve got you covered. Sign up today to become one of our independent micro-consultants and have instant access to smaller firms looking to grow their business. </p>
         </div>
       </div>
 
@@ -114,9 +98,9 @@
           <h2 class="center brown-text"><i class="mdi-social-group"></i></h2>
           <h5 class="center">The Company</h5>
 
-          <p class="light">Situation: Has your firm struggled to add quality bodies to your team due to the financial constraints? Can’t find energetic, creative, and academic top-tier talent?<br><br><br>
+          <p class="light center">Has your firm struggled to add quality bodies to your team due to the financial constraints? Can’t find energetic, creative, and academic top-tier talent?<br><br>
 
-            Fix: Grow your business today. With WorkingScholar, companies have instant access to our vast database of top-tier academic talent. Refine your search, confirm you can meet the desired student’s requirements, and connect instantaneously.</p>
+          Grow your business today. With WorkingScholar, companies have instant access to our vast database of top-tier academic talent. Refine your search, confirm you can meet the desired student’s requirements, and connect instantaneously.</p>
           </div>
         </div>
 
@@ -125,7 +109,7 @@
             <h2 class="center brown-text"><i class="mdi-action-settings"></i></h2>
             <h5 class="center">The Track Record</h5>
 
-            <p class="light">What makes us unique from all other job posting boards is our proprietary software. Create an online track record with each project successfully completed through WorkingScholar. Students and companies have the opportunity to rate each other based on their personal experiences. Get started today to start building your footprint!</p>
+            <p class="light center">What makes us unique from all other job posting boards is our proprietary software. Create an online track record with each project successfully completed through WorkingScholar. <br><br>Students and companies have the opportunity to rate each other based on their personal experiences. Get started today to start building your footprint!</p>
           </div>
         </div>
       </div>
@@ -154,7 +138,7 @@
           <h2 class="center brown-text"><i class="mdi-action-account-circle"></i></h2>
           <h5 class="center">Create an Account</h5>
 
-          <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ullam quam, culpa? Optio temporibus deleniti magni quaerat minima dolorem itaque ex quia similique, earum tenetur corrupti eveniet repellat facilis a!</p>
+          <p class="light center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ullam quam, culpa? Optio temporibus deleniti magni quaerat minima dolorem itaque ex quia similique, earum tenetur corrupti eveniet repellat facilis a!</p>
         </div>
       </div>
 
@@ -163,7 +147,7 @@
           <h2 class="center brown-text"><i class="mdi-social-group"></i></h2>
           <h5 class="center">Build Your Portfolio</h5>
 
-          <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ullam quam, culpa? Optio temporibus deleniti magni quaerat minima dolorem itaque ex quia similique, earum tenetur corrupti eveniet repellat facilis a!</p>
+          <p class="light center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ullam quam, culpa? Optio temporibus deleniti magni quaerat minima dolorem itaque ex quia similique, earum tenetur corrupti eveniet repellat facilis a!</p>
         </div>
       </div>
 
@@ -172,7 +156,7 @@
           <h2 class="center brown-text"><i class="mdi-action-settings"></i></h2>
           <h5 class="center">Launch Your Project!</h5>
 
-          <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ullam quam, culpa? Optio temporibus deleniti magni quaerat minima dolorem itaque ex quia similique, earum tenetur corrupti eveniet repellat facilis a!</p>
+          <p class="light center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ullam quam, culpa? Optio temporibus deleniti magni quaerat minima dolorem itaque ex quia similique, earum tenetur corrupti eveniet repellat facilis a!</p>
         </div>
       </div>
     </div>
@@ -198,4 +182,4 @@
       </div>
     </div>
   </div>
-</div>
+
