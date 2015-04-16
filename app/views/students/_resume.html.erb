@@ -1,0 +1,21 @@
+<% if resume_entries.length > 0 %>
+  <% resume_entries.each do |entry| %>
+    <div class="row">
+      <div class="col s11">
+        <%= render "resume_entries/entry", student: student, entry: entry %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <div class="center-align grey-text" style="margin-top: 5rem;">No information</div>
+<% end %>
+<div style="position: fixed; bottom: 9px; right: 24px;">
+  <%= link_to new_student_resume_entry_path(student),
+              data: { position: "left",
+                      delay: "50",
+                      tooltip: "Create new entry"
+              },
+              class: "tooltipped btn-floating btn-large waves-effect waves-light" do %>
+    <i class="mdi-content-add"></i>
+  <% end %>
+</div>

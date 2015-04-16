@@ -1,0 +1,43 @@
+<div class="card .z-index-1">
+  <div class="card-content">
+    <div class="entry-heading">
+      <span class="card-title black-text">
+        <%= entry.job_title %>
+        <% if current_account.student_username == params[:id] %>
+          <a href="#" class="entry-actions dropdown-button right" data-activates="<%= "entry-actions-#{entry.id}" %>">
+            <i class="mdi-navigation-more-vert"></i>
+          </a>
+          <ul id="<%= "entry-actions-#{entry.id}" %>" class="dropdown-content">
+            <li>
+              <%= link_to "Edit", edit_student_resume_entry_path(student, entry) %>
+            </li>
+            <li>
+              <%= link_to "Delete", student_resume_entry_path(student, entry),
+                data: { confirm: "Are you sure you want to delete this entry?" },
+                method: :delete %>
+            </li>
+          </ul>
+        <% end %>
+      </span>
+      <div class="grey-text lighten-2">
+        <div class="company-name">
+          <% if entry.employer %>
+            <i class="fa fa-briefcase"></i><a href="<%= employer_path(entry.employer) %>"><%= entry.employer_name %></a>
+          <% else %>
+            <i class="fa fa-briefcase"></i><%= entry.employer_name %></a>
+          <% end %>
+        </div>
+        <div class="duration">
+          <% if entry.start_date.present? && entry.end_date.present? %>
+            <i class="fa fa-calendar-o"></i><%= entry.start_date %> to <%= entry.end_date %>
+          <% else %>
+            <i class="fa fa-calendar-o"></i><span class="grey-text lighten-2">No information</span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="entry-body">
+      <p><%= render_markdown entry.description %></p>
+    </div>
+  </div>
+</div>
