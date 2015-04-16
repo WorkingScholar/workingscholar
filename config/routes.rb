@@ -23,7 +23,9 @@ Rails.application.routes.draw do
 
   resources :majors, only: [:index]
 
-  resources :students, only: [:index, :show, :edit, :update]
+  resources :students, only: [:index, :show, :edit, :update] do
+    resources :resume_entries, only: [:new, :create, :edit, :update, :destroy]
+  end
 
   resources :employers, only: [:index, :show, :edit, :update]
 end

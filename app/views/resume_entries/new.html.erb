@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+    <div class="section">
+      <%= form_for @resume_entry,
+                   url: student_resume_entries_path(current_account.student) do |f| %>
+        <%= render "form", f: f, entry: @resume_entry, button_text: "Create" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="input-field col s12">
+  <%= f.text_field :job_title %>
+  <%= f.label :job_title %><br>
+</div>
+<div class="input-field col s12">
+  <%= f.text_field :employer_name %>
+  <%= f.label :employer_name %><br>
+</div>
+<div class="input-field col s6">
+  <input id="resume_entry_start_date" class="datepicker" type="date" name="resume_entry[start_date]">
+  <%= f.label :start_date %>
+</div>
+<div class="input-field col s6">
+  <input id="resume_entry_end_date" class="datepicker" type="date" name="resume_entry[end_date]">
+  <%= f.label :end_date %>
+</div>
+<div class="input-field col s12">
+  <%= f.text_area :description, class: "materialize-textarea" %>
+  <%= f.label :description %>
+</div>
+
+<div class="actions input-field col s12">
+  <button class="btn waves-effect waves-light" type="submit" name="action"><%= button_text %>
+    <i class="mdi-content-send right"></i>
+  </button>
+</div>

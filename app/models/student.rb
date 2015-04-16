@@ -17,6 +17,8 @@ class Student < ActiveRecord::Base
   belongs_to :major, counter_cache: true
   delegate :name, to: :major, prefix: true, allow_nil: true
 
+  has_many :resume_entries, -> { order "end_date DESC" }
+
   def full_name
     "#{first_name} #{last_name}"
   end
