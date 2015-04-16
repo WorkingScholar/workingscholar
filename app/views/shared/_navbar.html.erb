@@ -1,24 +1,29 @@
-<div class="navbar-fixed">
-<nav class="white" role="navigation">
-  <div class="nav-wrapper container">
-    <a id="logo-container" href="#" class="brand-logo">
-      <%= image_tag("working-scholar-logo.svg", alt: "WorkingScholar logo", class: "logo-icon") %>
-      <div class="logo-text">
-        WorkingScholar
-      </div>
-    </a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a class="btn-flat disabled">TEAM</a></li>
-      <li><a class="btn-flat disabled">WHAT</a></li>
-      <li><a class="btn-flat disabled">HOW</a></li>
-      <li><a class="btn-flat disabled">WHY</a></li>
-      <li><a class="btn-flat disabled">TRY</a></li>
-    </ul>
-    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-  </div>
-  <div class="row">
-    <div class="col s12">This div is 12-columns wide</div>
-  </div>
-</nav>
-
+<div class="navbar-fixed ">
+  <nav class="grey lighten-4">
+    <div class="nav-wrapper">
+      <a id="logo-container" href="/" class="brand-logo">
+        <%= image_tag("working-scholar-logo.svg", alt: "WorkingScholar logo", class: "logo-icon") %>
+        <div class="logo-text">
+          WorkingScholar
+        </div>
+      </a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="btn-flat disabled" href="/#team">TEAM</a></li>
+        <li><a class="btn-flat disabled" href="/#why">WHY</a></li>
+        <li><a class="btn-flat disabled" href="/#what">WHAT</a></li>
+        <li><a class="btn-flat disabled" href="/#how">HOW</a></li>
+        <li><%= link_to "LOGIN", new_account_session_path, class: "btn-flat disabled" %></li>
+        <li><%= link_to "REGISTER", new_account_registration_path, class: "btn-flat disabled" %></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a class="btn-flat disabled" href="#team">TEAM</a></li>
+        <li><a class="btn-flat disabled" href="#why">WHY</a></li>
+        <li><a class="btn-flat disabled" href="#what">WHAT</a></li>
+        <li><a class="btn-flat disabled" href="#how">HOW</a></li>
+        <li><a class="btn-flat disabled">LOGIN</a></li>
+        <li><a class="btn-flat disabled">REGISTER</a></li>
+      </ul>
+    </div>
+  </nav>
 </div>

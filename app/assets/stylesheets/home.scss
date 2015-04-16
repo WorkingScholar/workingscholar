@@ -1,6 +1,5 @@
 nav ul a,
 nav .brand-logo {
-  color: #444;
 }
 
 a.brand-logo img{
@@ -14,8 +13,20 @@ body {
   flex-direction: column;
 }
 
+section {
+  min-height: 700px;
+}
+
+h2 {
+  padding-top: 7%;
+}
+
 main {
   flex: 1 0 auto;
+}
+
+.headshot img{
+  height: 160px;
 }
 
 p {
@@ -58,7 +69,7 @@ p {
 }
 
 div.hero {
-  min-height:50vh;
+  min-height:100vh;
   width: 100%;
   background-image: url("https://unsplash.it/5184/3456?image=48");
   background-size: cover;
@@ -76,22 +87,15 @@ div.hero {
   padding: 2%;
 }
 
-div.why {
-  min-height:100vh;
-  width: 100%;
-  background-image: url("https://unsplash.it/2509/1673?image=599");
+section.why {
+  background-image: url("https://unsplash.it/2509/1672?image=581");
   background-size: cover;
   background-position: 50%;
   background-attachment: fixed;
-
 }
 
-div.why h4{
-  color: white;
-}
-
-div.why p{
-  color: white;
+section.why p {
+  font-size:24px;
 }
 
 .icon-block {
