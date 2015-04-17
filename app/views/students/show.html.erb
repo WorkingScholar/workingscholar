@@ -11,7 +11,7 @@
         <div class="col s8">
           <h5 style="position: absolute; bottom: 0;"><%= @student.full_name %></h5>
         </div>
-        <% if current_account.student_username == params[:id] %>
+        <% if current_account && current_account.student_username == params[:id] %>
           <div class="col s2" style="position: absolute; bottom: 0; right: 0;">
             <%= link_to edit_student_path(current_account.student_username),
               method: :get,
