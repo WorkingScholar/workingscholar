@@ -3,7 +3,7 @@
     <div class="entry-heading">
       <span class="card-title black-text">
         <%= entry.job_title %>
-        <% if current_account.student_username == params[:id] %>
+        <% if current_account && current_account.student_username == params[:id] %>
           <a href="#" class="entry-actions dropdown-button right" data-activates="<%= "entry-actions-#{entry.id}" %>">
             <i class="mdi-navigation-more-vert"></i>
           </a>
