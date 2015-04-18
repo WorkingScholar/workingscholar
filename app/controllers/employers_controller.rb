@@ -24,7 +24,7 @@ class EmployersController < ApplicationController
   private
 
   def set_employer
-    @employer = Employer.friendly.find(params[:id])
+    @employer = Account.friendly.find(params[:id]).employer
   end
 
   def employer_params

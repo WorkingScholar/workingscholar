@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :accounts,
              sign_out_via: [:get, :delete],
              skip: [:sessions, :passwords],
+             controllers: { registrations: "accounts/registrations" },
              path_names: { sign_up: "register" }
   as :account do
     # Sessions
