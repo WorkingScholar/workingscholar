@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20150424011558) do
   enable_extension "plpgsql"
 
   create_table "accounts", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+    t.string "email",                  default: "", null: false
+    t.string "encrypted_password",     default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at",                          null: false
@@ -41,33 +41,45 @@ ActiveRecord::Schema.define(version: 20150424011558) do
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
-    t.string   "slug",                      null: false
-    t.integer  "sluggable_id",              null: false
-    t.string   "sluggable_type", limit: 50
-    t.string   "scope"
+    t.string "slug",                      null: false
+    t.integer "sluggable_id",              null: false
+    t.string "sluggable_type", limit: 50
+    t.string "scope"
     t.datetime "created_at"
   end
 
-  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
-  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", %w(slug sluggable_type scope), name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", %w(slug sluggable_type), name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "majors", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "students_count", default: 0
+    t.string "name"
+    t.integer "students_count", default: 0
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
 
+  create_table "postings", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.integer "employer_id"
+    t.string "duration"
+    t.string "compensation"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "postings", ["employer_id"], name: "index_postings_on_employer_id", using: :btree
+
   create_table "resume_entries", force: :cascade do |t|
-    t.integer  "student_id"
-    t.string   "job_title"
-    t.string   "employer_name"
-    t.integer  "employer_id"
-    t.string   "start_date"
-    t.string   "end_date"
-    t.text     "description"
+    t.integer "student_id"
+    t.string "job_title"
+    t.string "employer_name"
+    t.integer "employer_id"
+    t.string "start_date"
+    t.string "end_date"
+    t.text "description"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -76,8 +88,8 @@ ActiveRecord::Schema.define(version: 20150424011558) do
   add_index "resume_entries", ["student_id"], name: "index_resume_entries_on_student_id", using: :btree
 
   create_table "schools", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "students_count", default: 0
+    t.string "name"
+    t.integer "students_count", default: 0
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
@@ -95,6 +107,7 @@ ActiveRecord::Schema.define(version: 20150424011558) do
 
   add_foreign_key "accounts", "employers"
   add_foreign_key "accounts", "students"
+  add_foreign_key "postings", "employers"
   add_foreign_key "resume_entries", "employers"
   add_foreign_key "resume_entries", "students"
   add_foreign_key "students", "majors"

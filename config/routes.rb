@@ -1,7 +1,23 @@
 Rails.application.routes.draw do
+
   authenticated :account do
     root to: "profile#root", as: :authenticated_root
   end
+
+  get "postings/index"
+
+  get "postings/show"
+
+  get "postings/edit"
+
+  get "postings/create"
+
+  get "postings/new"
+
+  get "postings/update"
+
+  get "postings/destroy"
+
   root "home#index"
 
   scope :profile do
@@ -42,4 +58,5 @@ Rails.application.routes.draw do
   end
 
   resources :employers, only: [:index, :show, :new, :create, :update]
+  resources :postings, only: [:index, :show, :edit, :update, :new, :create, :destroy]
 end
