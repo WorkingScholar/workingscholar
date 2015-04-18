@@ -4,12 +4,12 @@ class Student < ActiveRecord::Base
   extend FriendlyId
   friendly_id :username
 
-  validates :username, presence: true, uniqueness: { case_sensitive: false }
   validates :first_name, presence: true
   validates :last_name, presence: true
 
   has_one :account
-  delegate :email, to: :account, prefix: true
+  delegate :username, to: :account
+  delegate :email, to: :account
 
   belongs_to :school, counter_cache: true
   delegate :name, to: :school, prefix: true, allow_nil: true
@@ -24,6 +24,6 @@ class Student < ActiveRecord::Base
   end
 
   def avatar_url
-    Gravatar.new(account_email).image_url(s: 100)
+    Gravatar.new(email).image_url(s: 100)
   end
 end

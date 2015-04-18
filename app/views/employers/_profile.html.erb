@@ -18,11 +18,7 @@
     </tr>
     <tr>
       <td>Email:</td>
-      <% if @employer.account.email %>
-      <td><%= @employer.account.email %></td>
-      <% else %>
-      <td class="grey-text lighten-2">No information</td>
-      <% end %>
+      <td><%= @employer.email %></td>
     </tr>
   </tbody>
 </table>

@@ -11,7 +11,7 @@ class StudentsController < ApplicationController
   end
 
   def edit
-    redirect_to @student unless current_account.student_username == params[:id]
+    redirect_to @student unless current_account.username == params[:id]
   end
 
   # TODO: refactor
@@ -46,7 +46,7 @@ class StudentsController < ApplicationController
   private
 
     def set_student
-      @student = Student.friendly.find(params[:id])
+      @student = Account.friendly.find(params[:id]).student
     end
 
     def student_params
