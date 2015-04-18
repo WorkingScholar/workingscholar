@@ -1,0 +1,26 @@
+<div class="container">
+<table>
+  <thead>
+    <tr>
+      <th>Position</th>
+      <th>Project</th>
+      <th>Employer</th>
+      <th>Duration</th>
+      <th>Compensation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @postings.each do |posting| %>
+      <tr>
+        <td><%= link_to posting.title, posting_path(posting) %></td>
+        <td><%= posting.description %></td>
+        <td><%= posting.employer %></td>
+        <td><%= posting.duration %></td>
+        <td><%= posting.compensation %></td>
+        <td><%= link_to 'Edit', edit_posting_path(posting) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
