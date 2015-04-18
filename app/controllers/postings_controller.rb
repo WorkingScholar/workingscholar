@@ -1,6 +1,6 @@
 class PostingsController < ApplicationController
   skip_before_action :authenticate_account!, only: [:index, :show]
-  before_action :set_posting, only: [:edit, :update, :destroy]
+  before_action :set_posting, only: [:edit, :show, :update, :destroy]
 
   def index
     @postings = Posting.all
@@ -28,6 +28,11 @@ class PostingsController < ApplicationController
   end
 
   def update
+    if @posting.update_attributes(posting_params)
+      redirect_to postings_path, notice: "Succesfully updated your posting."
+    else
+      render "edit"
+    end
   end
 
   def destroy
@@ -35,17 +40,17 @@ class PostingsController < ApplicationController
 
   private
 
-    def set_posting
-      @posting = Posting.find(params[:id])
-    end
+  def set_posting
+    @posting = Posting.find(params[:id])
+  end
 
-    def posting_params
-      params.require(:posting)
-        .permit(:title,
-                :description,
-                :duration,
-                :compensation
-               )
-        .merge(employer_id: Employer.friendly.find(current_account.employer).id)
-    end
+  def posting_params
+    params.require(:posting)
+      .permit(:title,
+              :description,
+              :duration,
+              :compensation
+      )
+      .merge(employer_id: Employer.friendly.find(current_account.employer.id).id)
+  end
 end
