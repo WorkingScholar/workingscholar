@@ -3,7 +3,6 @@
     <thead>
       <tr>
         <th>Job Title</th>
-        <th>Project Requirements</th>
         <th>Employer</th>
         <th>Duration</th>
         <th>Compensation</th>
@@ -14,7 +13,6 @@
       <% @postings.each do |posting| %>
       <tr>
         <td><%= link_to posting.title, posting_path(posting) %></td>
-        <td><%= posting.description %></td>
         <td><%= posting.employer.name %></td>
         <td><%= posting.duration %></td>
         <td><%= posting.compensation %></td>
