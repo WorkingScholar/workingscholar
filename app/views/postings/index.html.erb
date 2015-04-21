@@ -1,11 +1,12 @@
 <div class="container">
-  <table>
+  <table class="hoverable bordered centered">
     <thead>
       <tr>
         <th>Job Title</th>
         <th>Employer</th>
         <th>Duration</th>
         <th>Compensation</th>
+        <th>Apply!</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -13,12 +14,17 @@
       <% @postings.each do |posting| %>
       <tr>
         <td><%= link_to posting.title, posting_path(posting) %></td>
-        <td><%= posting.employer.name %></td>
+        <td><%= link_to posting.employer.name, employer_path(posting.employer.username) %></td>
         <td><%= posting.duration %></td>
         <td><%= posting.compensation %></td>
-        <td><button class="btn waves-effect waves-light" type="submit" name="action">Apply
-          <i class="mdi-content-send right"></i>
-        </button>
+        <td> <%= link_to posting_path(posting),
+              data: { position: "left",
+                      delay: "50",
+                      tooltip: "Click here to apply"
+              },
+              class: "tooltipped btn-floating btn-small waves-effect waves-light" do %>
+              <i class="mdi-content-send"></i>
+            <% end %>
         </td>
       </tr>
       <% end %>
