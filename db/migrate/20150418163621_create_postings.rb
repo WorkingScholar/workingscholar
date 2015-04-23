@@ -4,7 +4,7 @@ class CreatePostings < ActiveRecord::Migration
       t.string :title
       t.string :description
       t.references :employer, index: true, foreign_key: true
-      t.string :duration
+      t.integer :duration
       t.string :compensation
 
       t.timestamps null: false

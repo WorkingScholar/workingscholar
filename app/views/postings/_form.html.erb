@@ -2,11 +2,12 @@
   <%= form_for(@posting) do |f| %>
     <div class="input-field col s12">
       <%= f.text_field :title %>
-      <%= f.label :title %><br>
+      <%= f.label :title %>
     </div>
     <div class="input-field col s6">
-      <%= f.text_field :duration %>
-      <%= f.label :duration %>
+      <p class="range-field" style="padding-top:12.5px">
+        <%= f.range_field :duration, min: "1", max: "5" %>
+      </p>
     </div>
     <div class="input-field col s6">
       <%= f.text_field :compensation %>
@@ -24,3 +25,4 @@
     </div>
   <% end %>
 </div>
+
