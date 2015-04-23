@@ -16,9 +16,9 @@
          <p><%= @posting.description %></p>
        </li>
        <li class="collection-item avatar">
-         <i class="mdi-device-access-time circle  cyan darken-2"></i>
+         <i class="mdi-device-access-time circle cyan darken-2"></i>
          <span class="title"><b>Duration</b></span>
-         <p><%= @posting.duration %></p>
+         <p><%= pluralize(@posting.duration, 'Week') %></p>
        </li>
        <li class="collection-item avatar">
          <i class="mdi-editor-attach-money circle deep-orange lighten-3"></i>

@@ -14,6 +14,7 @@ class PostingsController < ApplicationController
   end
 
   def create
+    # @posting = current_employer.postings.new(posting_params)
     @posting = Posting.new(posting_params)
     if @posting.save
       redirect_to posting_path(@posting),
@@ -51,6 +52,6 @@ class PostingsController < ApplicationController
               :duration,
               :compensation
       )
-      .merge(employer_id: Employer.friendly.find(current_account.employer.id).id)
+      .merge(employer_id: current_account.employer.id)
   end
 end
