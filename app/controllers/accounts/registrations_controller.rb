@@ -5,10 +5,14 @@ class Accounts::RegistrationsController < Devise::RegistrationsController
   protected
 
   def configure_sign_up_params
-    devise_parameter_sanitizer.for(:sign_up) << :username
+    devise_parameter_sanitizer.for(:sign_up).concat([:username, :name])
   end
 
   def configure_account_update_params
-    devise_parameter_sanitizer.for(:account_update) << :username
+    devise_parameter_sanitizer.for(:account_update).concat([:username, :name])
+  end
+
+  def after_update_path_for(*)
+    profile_path(current_account.username)
   end
 end
