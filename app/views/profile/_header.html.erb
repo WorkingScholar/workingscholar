@@ -1,0 +1,31 @@
+<div class="col s12" style="position: relative">
+  <div class="section">
+
+    <div class="col s2">
+      <div class="profile-avatar">
+        <img src="<%= account.avatar_url %>" alt="avatar" class="responsive-img circle">
+      </div>
+    </div>
+    <div class="col s8">
+      <h5 style="position: absolute; bottom: 0;">
+        <% if account.name %>
+          <%= account.name %>
+            <small class="grey-text"><%= account.username %></small>
+        <% else %>
+          <%= account.username %>
+        <% end %>
+        <% if current_account && current_account.username == params[:id] %>
+          <a href="#" class="profile-actions dropdown-button right" data-activates="profile-actions">
+            <i class="mdi-navigation-more-vert"></i>
+          </a>
+          <ul id="profile-actions" class="dropdown-content">
+            <li>
+              <%= link_to "Edit", edit_profile_path(account.username) %>
+            </li>
+          </ul>
+        <% end %>
+      </h5>
+    </div>
+
+  </div>
+</div>
