@@ -6,10 +6,10 @@ class Account < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
 
   validates :username, presence: true, uniqueness: { case_sensitive: false }
+  validates :name, presence: true
 
   belongs_to :student
   has_many :resume_entries, through: :student
-  delegate :name, to: :student, allow_nil: true
 
   belongs_to :employer
 
