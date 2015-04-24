@@ -5,7 +5,7 @@
 <div class="row">
   <%= form_for resource,
     as: resource_name,
-    url: registration_path(resource_name),
+    url: profile_path(current_account.username),
     html: { method: :put } do |f| %>
     <%= devise_error_messages! %>
 

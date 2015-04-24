@@ -6,6 +6,20 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.text_field :username, class: "validate" %>
+      <%= f.label :username %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.text_field :name, class: "validate" %>
+      <%= f.label :name %>
+    </div>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
