@@ -1,0 +1,21 @@
+<div class="row">
+  <h5>Edit Profile</h5>
+</div>
+
+<div class="row">
+  <% if @account.student %>
+    <%= form_for @account.student,
+      html: { method: :put } do |f| %>
+
+      <%= render "students/form", f: f, student: @account.student, button_text: "Update" %>
+
+    <% end %>
+  <% elsif @account.employer %>
+    <%= form_for @account.employer,
+      html: { method: :put } do |f| %>
+
+      <%= render "employers/form", f: f, employer: @account.employer, button_text: "Update" %>
+
+    <% end %>
+  <% end %>
+</div>

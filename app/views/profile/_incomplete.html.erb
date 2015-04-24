@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col s12">
+    <div class="section">
+      <p class="grey-text center-align">Your profile is incomplete. Please complete your profile by clicking one of the buttons below.</p>
+      <div class="center">
+        <%= link_to  new_employer_path, class: "btn-large waves-effect waves-light", method: :get do %>
+        <i class="mdi-maps-store-mall-directory right"></i>I'm an Employer
+        <% end %>
+        <%= link_to  new_student_path, class: "btn-large waves-effect waves-light", method: :get do %>
+          <i class="mdi-social-school right"></i>I'm a Student
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
