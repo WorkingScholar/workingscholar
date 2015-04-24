@@ -1,35 +1,32 @@
 <div class ="hero">
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
+        <div class="container-fluid">
         <h1 class="center">Find Your Next Project Today!</h1>
-        <h4 class="center">University students need jobs. Small-to-medium sized businesses need quality employees. We are in the business of connecting the two!</h4>
-        <div class = "started">
-          <div class="row center">
+        <div class="container">
+        <p class="flow-text">University students need jobs. Small-to-medium sized businesses need quality employees. We are in the business of connecting the two!</p>
+        </div>
+          <div class="started row center">
+            <%= link_to  new_account_registration_path, class: "btn-large waves-effect waves-light", method: :get do %>
+            <i class="mdi-social-school right"></i>I'm a Student
+            <% end %>
             <%= link_to  new_account_registration_path, class: "btn-large waves-effect waves-light", method: :get do %>
             <i class="mdi-maps-store-mall-directory right"></i>I'm an Employer
             <% end %>
-            <%= link_to  new_account_registration_path, class: "btn-large waves-effect waves-light", method: :get do %>
-              <i class="mdi-social-school right"></i>I'm a Student
-            <% end %>
           </div>
-        </div>
-        <br><br>
-      </div>
+          </div>
     </div>
   </div>
 </div>
-
 
 <div class = "container">
 
   <section id="team">
 
-  <div class="row">
-    <div class="col s12 center">
-      <h2>Team</h2>
-    </div>
+    <div class="row">
+      <div class="col s12 center">
+        <h2>Team</h2>
+      </div>
       <div class="col s12 m6">
         <div class="center">
           <div class="headshot">
@@ -65,14 +62,14 @@
         <div class="col s12 center">
           <h2>Why</h2>
           <p class="center-align light">Small-to-medium sized businesses have demand for project-based labour but lack the financial means to utilize larger consulting and marketing firms. <br><br>This includes preparing financial statements, basic web development, web/logo design, marketing strategy, social media implementation, and other creative and business aspects. <br><br>That’s where we come in.
-          Students have a need to apply their theoretical and technical backgrounds to real-life scenarios to help launch their careers. We boast a vast array of talented students who can help your business grow. Just refine your search, and start hiring!
+            Students have a need to apply their theoretical and technical backgrounds to real-life scenarios to help launch their careers. We boast a vast array of talented students who can help your business grow. Just refine your search, and start hiring!
           </p>
         </div>
-        </div>
       </div>
-
     </div>
+
   </div>
+</div>
 </section>
 
 <section id="what">
@@ -89,7 +86,7 @@
         <p class="light center">Have you ever been turned down for a full-time summer position or entry-level job due to your lack of “professional” experiences? In today’s market, finding a job as a student without prior experience is nearly impossible.<br><br>
 
 
-        No more. We’ve got you covered. Sign up today to become one of our independent micro-consultants and have instant access to smaller firms looking to grow their business. </p>
+          No more. We’ve got you covered. Sign up today to become one of our independent micro-consultants and have instant access to smaller firms looking to grow their business. </p>
         </div>
       </div>
 
@@ -100,7 +97,7 @@
 
           <p class="light center">Has your firm struggled to add quality bodies to your team due to the financial constraints? Can’t find energetic, creative, and academic top-tier talent?<br><br>
 
-          Grow your business today. With WorkingScholar, companies have instant access to our vast database of top-tier academic talent. Refine your search, confirm you can meet the desired student’s requirements, and connect instantaneously.</p>
+            Grow your business today. With WorkingScholar, companies have instant access to our vast database of top-tier academic talent. Refine your search, confirm you can meet the desired student’s requirements, and connect instantaneously.</p>
           </div>
         </div>
 
@@ -130,9 +127,9 @@
 
   <section id="how">
     <div class="row">
-    <div class="col s12 center">
-      <h2>How</h2>
-    </div>
+      <div class="col s12 center">
+        <h2>How</h2>
+      </div>
       <div class="col s12 m4">
         <div class="icon-block">
           <h2 class="center brown-text"><i class="mdi-action-account-circle"></i></h2>

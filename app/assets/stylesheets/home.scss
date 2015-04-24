@@ -37,18 +37,16 @@ p {
   color: #26a69a;
 }
 
-.started {
-  padding: 10%;
-
-}
 
 .parallax-container {
   min-height: 380px;
   line-height: 0;
-  height: auto;
   color: rgba(255,255,255,.9);
 }
 
+.parallax-container h1 {
+  padding-bottom:1%;
+}
 
 .parallax-container .section {
   width: 100%;
