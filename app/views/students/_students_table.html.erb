@@ -12,10 +12,10 @@
       <tr>
         <td>
           <a href="<%= student_path student.username %>">
-            <%= student.full_name %>
+            <%= student.name%>
           </a>
         </td>
-        <td><%= student.account_email %></td>
+        <td><%= student.email %></td>
         <td>
           <% if student.school_name %>
             <%= student.school_name %>
