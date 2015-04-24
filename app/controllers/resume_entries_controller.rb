@@ -1,3 +1,5 @@
+require "resume_entry_params"
+
 class ResumeEntriesController < ApplicationController
   before_action :set_resume_entry, only: [:edit, :update, :destroy]
 
@@ -5,14 +7,9 @@ class ResumeEntriesController < ApplicationController
     @resume_entry = ResumeEntry.new
   end
 
-  # TODO: refactor
-  # rubocop:disable Metrics/AbcSize
   def create
-    munged_params = resume_params
-    munged_params[:start_date] = Date.parse(resume_params[:start_date])
-    munged_params[:end_date] = Date.parse(resume_params[:end_date])
-
-    @resume_entry = ResumeEntry.new(munged_params)
+    munged_params = ResumeEntryParams.build(resume_params)
+    @resume_entry = current_account.student.resume_entries.build(munged_params)
     if @resume_entry.save
       redirect_to student_path(current_account.student),
                   notice: "Successfully created new resume entry."
@@ -20,19 +17,9 @@ class ResumeEntriesController < ApplicationController
       render :new
     end
   end
-  # rubocop:enable Metrics/AbcSize
 
-  # TODO: refactor
-  # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   def update
-    munged_params = resume_params
-    if munged_params[:start_date].present?
-      munged_params[:start_date] = Date.parse(resume_params[:start_date])
-    end
-    if munged_params[:end_date].present?
-      munged_params[:end_date] = Date.parse(resume_params[:end_date])
-    end
-
+    munged_params = ResumeEntryParams.build(resume_params)
     if @resume_entry.update(munged_params)
       redirect_to student_path(current_account.student),
                   notice: "Successfully updated resume entry."
@@ -40,7 +27,6 @@ class ResumeEntriesController < ApplicationController
       render :edit
     end
   end
-  # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
   def destroy
     @resume_entry.destroy
@@ -62,6 +48,5 @@ class ResumeEntriesController < ApplicationController
                 :end_date,
                 :description
                )
-        .merge(student_id: Student.friendly.find(params[:student_id]).id)
     end
 end
