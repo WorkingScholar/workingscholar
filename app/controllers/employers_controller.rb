@@ -1,5 +1,6 @@
 class EmployersController < ApplicationController
   skip_before_action :authenticate_account!, only: [:index]
+  before_action :profile_completedness!, only: [:new, :create]
 
   before_action :set_employer, only: [:show, :edit, :update]
 
@@ -7,15 +8,28 @@ class EmployersController < ApplicationController
     @employers = Employer.all
   end
 
-  def show
+  def new
+    @employer = Employer.new
+  end
+
+  def create
+    @employer = current_account.build_employer(employer_params)
+    if @employer.save
+      redirect_to profile_path(current_account.username),
+                  notice: "Successfully updated profile."
+    else
+      render :new
+    end
   end
 
   def edit
+    redirect_to @employer unless current_account.username == params[:id]
   end
 
   def update
     if @employer.update_attributes(employer_params)
-      redirect_to employers_path, notice: "Succesfully updated your profile"
+      redirect_to profile_path(current_account.username),
+                  notice: "Successfully updated profile."
     else
       render "edit"
     end
@@ -23,11 +37,11 @@ class EmployersController < ApplicationController
 
   private
 
-  def set_employer
-    @employer = Account.friendly.find(params[:id]).employer
-  end
+    def set_employer
+      @employer = Account.friendly.find(params[:id]).employer
+    end
 
-  def employer_params
-    params.require(:employer).permit(:name, :username, :email)
-  end
+    def employer_params
+      params.require(:employer).permit(:name)
+    end
 end

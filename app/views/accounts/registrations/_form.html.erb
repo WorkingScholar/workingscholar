@@ -1,0 +1,39 @@
+<div class="section">
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.email_field :email, class: "validate" %>
+      <%= f.label :email %>
+    </div>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.password_field :current_password, autocomplete: "off", class: "validate" %>
+      <%= f.label :current_password, "Old password" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.password_field :password, autocomplete: "off", class: "validate" %>
+      <%= f.label :password, "New password (8 characters minimum)" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: "validate" %>
+      <label for:"password-confirmation">Confirm new password</label>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn waves-effect waves-light" type="submit" name="action"><%= button_text %>
+      <i class="mdi-content-send right"></i>
+    </button>
+  </div>
+</div>

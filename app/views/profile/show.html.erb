@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <%= render "header", account: @account %>
+  </div>
+  <div class="row">
+    <% if @account.student %>
+      <%= render "students/body", student: @account.student %>
+    <% elsif @account.employer %>
+      <%= render "employers/body", employer: @account.employer %>
+    <% else %>
+      <% if current_account && current_account.username == params[:id] %>
+        <%= render "incomplete" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

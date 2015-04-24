@@ -19,11 +19,7 @@ class Student < ActiveRecord::Base
 
   has_many :resume_entries, -> { order "end_date DESC" }
 
-  def full_name
+  def name
     "#{first_name} #{last_name}"
-  end
-
-  def avatar_url
-    Gravatar.new(email).image_url(s: 100)
   end
 end

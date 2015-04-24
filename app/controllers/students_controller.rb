@@ -1,5 +1,8 @@
+require "student_params"
+
 class StudentsController < ApplicationController
   skip_before_action :authenticate_account!, only: [:index, :show]
+  before_action :profile_completedness!, only: [:new, :create]
 
   before_action :set_student, only: [:show, :edit, :update]
 
@@ -7,41 +10,33 @@ class StudentsController < ApplicationController
     @students = Student.all.includes(:account, :school, :major, :resume_entries)
   end
 
-  def show
+  def new
+    @student = Student.new
+  end
+
+  def create
+    munged_params = StudentParams.build(student_params)
+    @student = current_account.build_student(munged_params)
+    if @student.save && current_account.save
+      redirect_to profile_path(current_account.username),
+                  notice: "Successfully updated profile."
+    else
+      render :new
+    end
   end
 
   def edit
     redirect_to @student unless current_account.username == params[:id]
   end
 
-  # TODO: refactor
-  # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   def update
-    munged_params = student_params.dup
-
-    if munged_params[:school_name].present?
-      munged_params[:school_id] = School.find_or_create_by(name: munged_params[:school_name]).id
-    end
-    munged_params.delete(:school_name)
-
-    if munged_params[:major_name].present?
-      munged_params[:major_id] = Major.find_or_create_by(name: munged_params[:major_name]).id
-    end
-    munged_params.delete(:major_name)
-
-    if munged_params[:graduation_year].to_i
-      munged_params[:graduation_year] = Date.new munged_params[:graduation_year].to_i
-    else
-      munged_params.delete(:graduation_year)
-    end
-
+    munged_params = StudentParams.build(student_params)
     if @student.update_attributes(munged_params)
       redirect_to @student, notice: "Profile was sucessfully updated."
     else
       render :edit
     end
   end
-  # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
   private
 
@@ -50,11 +45,12 @@ class StudentsController < ApplicationController
     end
 
     def student_params
-      params.require(:student).permit(:username,
-                                      :first_name,
-                                      :last_name,
-                                      :school_name,
-                                      :major_name,
-                                      :graduation_year)
+      params.require(:student)
+        .permit(:first_name,
+                :last_name,
+                :school_name,
+                :major_name,
+                :graduation_year
+               )
     end
 end
