@@ -1,16 +1,35 @@
 $logo-height: 30px;
 $logo-spacing-margin: ($navbar-height - $logo-height) / 2;
 
+.nav-wrapper {
+  margin: 0 29px;
+}
+
 a.brand-logo {
 
   img.logo-icon {
     float: left;
     height: $logo-height;
-    margin: $logo-spacing-margin 5px $logo-spacing-margin 29px;
+    margin: $logo-spacing-margin 5px $logo-spacing-margin 0;
   }
 
   div.logo-text {
     float: left;
     color: black;
   }
+}
+
+.nav-item {
+  color: $button-color-disabled;
+  padding: 0 2rem;
+  text-transform: uppercase;
+}
+
+.button-collapse {
+  color: $primary_color;
+}
+
+img.navbar-avatar {
+  height: $logo-height;
+  margin: $logo-spacing-margin 10px 0 0;
 }

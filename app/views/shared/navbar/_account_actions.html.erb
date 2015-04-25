@@ -1,0 +1,17 @@
+<% if current_account %>
+  <li>
+    <a href="#" class="dropdown-button nav-item" data-activates="nav-profile-dropdown">
+      <img class="navbar-avatar circle left" src="<%= current_account.avatar_url %>" alt="avatar">
+      Hi, <%= current_account.name %>
+      <i class="mdi-navigation-arrow-drop-down right"></i>
+    </a>
+  </li>
+  <ul id="nav-profile-dropdown" class="dropdown-content">
+    <li><%= link_to "My Profile", profile_path(current_account.username) %></li>
+    <li class="divider"></li>
+    <li><%= link_to "Logout", destroy_account_session_path, method: :delete %></li>
+  </ul>
+<% else %>
+  <li><%= link_to "Login", new_account_session_path, class: "nav-item" %></li>
+  <li><%= link_to "Register", new_account_registration_path, class: "nav-item" %></li>
+<% end %>
