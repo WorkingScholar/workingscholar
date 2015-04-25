@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //
 //= require materialize
+//= require navbar
 //= require typeahead
 //
 //= require schools

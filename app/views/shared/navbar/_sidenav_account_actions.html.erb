@@ -1,0 +1,8 @@
+<% if current_account %>
+  <li><%= link_to "My Profile", profile_path(current_account.username), class: "nav-item" %></li>
+  <li class="divider"></li>
+  <li><%= link_to "Logout", destroy_account_session_path, method: :delete, class: "nav-item" %></li>
+<% else %>
+  <li><%= link_to "Login", new_account_session_path, class: "nav-item" %></li>
+  <li><%= link_to "Register", new_account_registration_path, class: "nav-item" %></li>
+<% end %>
