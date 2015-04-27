@@ -6,12 +6,18 @@
     </div>
     <div class="input-field col s6">
       <p class="range-field" style="padding-top:12.5px">
-        <%= f.range_field :duration, min: "1", max: "5" %>
+        <%= f.range_field :duration, min: "1", max: "4" %>
       </p>
+      <%= f.label :duration, "Duration (Weeks)" %>
     </div>
     <div class="input-field col s6">
-      <%= f.text_field :compensation %>
-      <%= f.label :compensation %>
+      <%= f.label :compensation, "Compensation Type" %>
+     <p class ="center" style="padding-top:5px">
+      <%= f.radio_button(:compensation, "Pay") %>
+        <%= f.label(:compensation_pay, "Pay") %>
+      <%= f.radio_button(:compensation, "Referral") %>
+        <%= f.label(:compensation_referral, "Referral") %>
+     </p>
     </div>
     <div class="input-field col s12">
       <%= f.text_area :description, class: "materialize-textarea" %>
