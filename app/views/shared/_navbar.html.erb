@@ -1,31 +1,25 @@
-<div class="navbar-fixed ">
+<div class="navbar-fixed">
   <nav class="grey lighten-4">
     <div class="nav-wrapper">
-      <a id="logo-container" href="/" class="brand-logo">
+      <%= link_to root_path, id: "logo-container", class: "brand-logo" do %>
         <%= image_tag("working-scholar-logo.svg", alt: "WorkingScholar logo", class: "logo-icon") %>
         <ul class="left hide-on-med-and-down">
           <div class="logo-text">
             WorkingScholar
           </div>
         </ul>
-      </a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      <% end %>
       <ul class="right hide-on-med-and-down">
-        <li><a class="btn-flat disabled" href="/#team">TEAM</a></li>
-        <li><a class="btn-flat disabled" href="/#why">WHY</a></li>
-        <li><a class="btn-flat disabled" href="/#what">WHAT</a></li>
-        <li><a class="btn-flat disabled" href="/#how">HOW</a></li>
-        <li><%= link_to "LOGIN", new_account_session_path, class: "btn-flat disabled" %></li>
-        <li><%= link_to "REGISTER", new_account_registration_path, class: "btn-flat disabled" %></li>
+        <%= render "shared/navbar/page_actions" %>
+        <%= render "shared/navbar/account_actions" %>
       </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a class="btn-flat disabled" href="#team">TEAM</a></li>
-        <li><a class="btn-flat disabled" href="#why">WHY</a></li>
-        <li><a class="btn-flat disabled" href="#what">WHAT</a></li>
-        <li><a class="btn-flat disabled" href="#how">HOW</a></li>
-        <li><a class="btn-flat disabled">LOGIN</a></li>
-        <li><a class="btn-flat disabled">REGISTER</a></li>
+      <ul id="side-navigation" class="side-nav">
+        <li><%= link_to "Home", root_path, class: "nav-item" %>
+        <%= render "shared/navbar/page_actions" %>
+        <li class="divider"></li>
+        <%= render "shared/navbar/sidenav_account_actions" %>
       </ul>
+      <a href="#" data-activates="side-navigation" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
     </div>
   </nav>
 </div>
