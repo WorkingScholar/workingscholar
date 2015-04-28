@@ -1,0 +1,14 @@
+<table class="hoverable centered">
+  <thead>
+    <tr>
+      <th>Applications</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% posting_applications.each do |posting_application| %>
+      <tr>
+        <td><%= posting_application.posting.title %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
