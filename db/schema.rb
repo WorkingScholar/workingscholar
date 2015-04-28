@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150427233136) do
+ActiveRecord::Schema.define(version: 20150428172232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,8 +76,9 @@ ActiveRecord::Schema.define(version: 20150427233136) do
     t.integer  "employer_id"
     t.integer  "duration"
     t.string   "compensation"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "view_count",   default: 0
   end
 
   add_index "postings", ["employer_id"], name: "index_postings_on_employer_id", using: :btree

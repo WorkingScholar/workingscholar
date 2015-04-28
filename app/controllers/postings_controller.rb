@@ -11,6 +11,8 @@ class PostingsController < ApplicationController
   end
 
   def show
+    @posting = Posting.find(params[:id])
+    @posting.increment!(:view_count)
   end
 
   def create
