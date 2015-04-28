@@ -12,22 +12,22 @@
       <tr>
         <td>
           <a href="<%= student_path student.username %>">
-            <%= student.name%>
+            <%= student.name.upcase%>
           </a>
         </td>
-        <td><%= student.email %></td>
+        <td><%= student.email.upcase %></td>
         <td>
           <% if student.school_name %>
-            <%= student.school_name %>
+            <%= student.school_name.upcase %>
           <% else %>
-            <div class="grey-text">No information</div>
+            <div class="grey-text">NO INFORMATION</div>
           <% end %>
         </td>
         <td>
           <% if student.major_name %>
-            <%= student.major_name %>
+            <%= student.major_name.upcase %>
           <% else %>
-            <div class="grey-text">No information</div>
+            <div class="grey-text">NO INFORMATION</div>
           <% end %>
         </td>
       </tr>

@@ -12,10 +12,10 @@
   <tbody>
     <% postings.each do |posting| %>
       <tr>
-        <td><%= posting.title %></td>
-        <td><%= posting.description%></td>
-        <td><%= pluralize(posting.duration, 'Week')%></td>
-        <td><%= posting.compensation%></td>
+        <td><%= posting.title.upcase %></td>
+        <td><%= posting.description.upcase%></td>
+        <td><%= pluralize(posting.duration, 'Week').upcase%></td>
+        <td><%= posting.compensation.upcase%></td>
         <td><%= posting.view_count %></td>
       </tr>
     <% end %>

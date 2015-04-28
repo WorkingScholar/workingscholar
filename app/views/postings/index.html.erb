@@ -14,10 +14,10 @@
     <tbody>
       <% @postings.each do |posting| %>
       <tr>
-        <td><%= link_to posting.title, posting_path(posting) %></td>
-        <td><%= link_to posting.employer.name, employer_path(posting.employer.username) %></td>
-        <td><%= pluralize(posting.duration, 'Week')%></td>
-        <td><%= posting.compensation %></td>
+        <td><%= link_to posting.title.upcase, posting_path(posting) %></td>
+        <td><%= link_to posting.employer.name.upcase, employer_path(posting.employer.username) %></td>
+        <td><%= pluralize(posting.duration, 'WEEK').upcase%></td>
+        <td><%= posting.compensation.upcase %></td>
         <td> <%= link_to posting_path(posting),
               data: { position: "left",
                       delay: "50",

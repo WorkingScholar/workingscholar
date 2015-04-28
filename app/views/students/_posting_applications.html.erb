@@ -11,11 +11,11 @@
   <tbody>
     <% posting_applications.each do |posting_application| %>
       <tr>
-        <td><%= posting_application.posting.title %></td>
-        <td><%= posting_application.posting.description %></td>
-        <td><%= posting_application.posting.employer.name %></td>
-        <td><%= pluralize(posting_application.posting.duration, 'Week')%></td>
-        <td><%= posting_application.posting.compensation %></td>
+        <td><%= posting_application.posting.title.upcase %></td>
+        <td><%= posting_application.posting.description.upcase %></td>
+        <td><%= posting_application.posting.employer.name.upcase %></td>
+        <td><%= pluralize(posting_application.posting.duration, 'Week').upcase%></td>
+        <td><%= posting_application.posting.compensation.upcase %></td>
       </tr>
     <% end %>
   </tbody>
