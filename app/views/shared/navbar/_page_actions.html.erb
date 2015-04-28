@@ -1,0 +1,9 @@
+<% if controller_name == "home" %>
+  <li><a class="nav-item" href="/#team">Team</a></li>
+  <li><a class="nav-item" href="/#why">Why</a></li>
+  <li><a class="nav-item" href="/#what">What</a></li>
+  <li><a class="nav-item" href="/#how">How</a></li>
+<% else %>
+  <li><%= link_to "Students", students_path, class: "nav-item" %></li>
+  <li><%= link_to "Employers", employers_path, class: "nav-item" %></li>
+<% end %>

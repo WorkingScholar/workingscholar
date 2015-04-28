@@ -1,26 +1,8 @@
-nav ul a,
-nav .brand-logo {
-}
-
-a.brand-logo img{
-  max-height:100px;
-  max-width:100px;
-}
-
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
-
-section {
-  min-height: 700px;
-}
-
-h2 {
-  padding-top: 7%;
-}
-
 main {
   flex: 1 0 auto;
 }
@@ -28,15 +10,6 @@ main {
 .headshot img{
   height: 160px;
 }
-
-p {
-  line-height: 2rem;
-}
-
-.button-collapse {
-  color: #26a69a;
-}
-
 
 .parallax-container {
   min-height: 380px;
