@@ -1,6 +1,6 @@
-class CreateApplications < ActiveRecord::Migration
+class CreatePostingApplications < ActiveRecord::Migration
   def change
-    create_table :applications do |t|
+    create_table :posting_applications do |t|
       t.references :posting, index: true, foreign_key: true
       t.references :student, index: true, foreign_key: true
 
