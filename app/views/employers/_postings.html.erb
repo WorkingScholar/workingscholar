@@ -2,19 +2,13 @@
 <table class="hoverable">
   <thead>
     <tr>
-      <th>Position</th>
-      <th>Applicant's Name</th>
-      <th>Applicant's Major</th>
-      <th>Applicant's Department</th>
-      <th>Applicant's School</th>
+      <th>Job Postings</th>
     </tr>
   </thead>
   <tbody>
-    <% @applications.each do |application| %>
+    <% @postings.each do |posting| %>
       <tr>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td><%= posting.title %></td>
       </tr>
     <% end %>
   </tbody>

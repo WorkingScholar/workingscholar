@@ -26,11 +26,12 @@
               <i class="mdi-action-favorite-outline"></i>
             <% end %>
         </td>
-        <td> <%= link_to posting_path(posting),
+        <td> <%= link_to posting_posting_applications_path(posting),
               data: { position: "left",
                       delay: "50",
                       tooltip: "Click here to apply"
               },
+              method: :post,
               class: "tooltipped" do %>
               <i class="mdi-content-send"></i>
             <% end %>

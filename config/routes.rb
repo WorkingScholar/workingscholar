@@ -57,5 +57,7 @@ Rails.application.routes.draw do
   end
 
   resources :employers, only: [:index, :show, :new, :create, :update]
-  resources :postings, only: [:index, :show, :edit, :update, :new, :create, :destroy]
+  resources :postings, only: [:index, :show, :edit, :update, :new, :create, :destroy] do
+    resources :posting_applications, only: [:create, :destroy]
+  end
 end
