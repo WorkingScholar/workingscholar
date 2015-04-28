@@ -2,12 +2,20 @@
   <thead>
     <tr>
       <th>Applications</th>
+      <th>Project Requirements</th>
+      <th>Company</th>
+      <th>Duration</th>
+      <th>Compensation Type</th>
     </tr>
   </thead>
   <tbody>
     <% posting_applications.each do |posting_application| %>
       <tr>
         <td><%= posting_application.posting.title %></td>
+        <td><%= posting_application.posting.description %></td>
+        <td><%= posting_application.posting.employer.name %></td>
+        <td><%= pluralize(posting_application.posting.duration, 'Week')%></td>
+        <td><%= posting_application.posting.compensation %></td>
       </tr>
     <% end %>
   </tbody>
