@@ -12,6 +12,9 @@ class Student < ActiveRecord::Base
   belongs_to :school, counter_cache: true
   delegate :name, to: :school, prefix: true, allow_nil: true
 
+  belongs_to :department, counter_cache: true
+  delegate :name, to: :department, prefix: true, allow_nil: true
+
   belongs_to :major, counter_cache: true
   delegate :name, to: :major, prefix: true, allow_nil: true
 
