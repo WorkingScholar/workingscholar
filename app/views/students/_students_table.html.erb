@@ -24,6 +24,13 @@
           <% end %>
         </td>
         <td>
+          <% if student.department_name %>
+            <%= student.department_name %>
+          <% else %>
+            <div class="grey-text">No information</div>
+          <% end %>
+        </td>
+        <td>
           <% if student.major_name %>
             <%= student.major_name.upcase %>
           <% else %>

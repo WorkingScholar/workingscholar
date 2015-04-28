@@ -2,6 +2,7 @@ class StudentParams
   def self.build(params)
     munged_params = params.dup
     find_or_create_school!(munged_params)
+    find_department_by_id!(munged_params)
     find_or_create_major!(munged_params)
     coerce_graduation_year_to_date!(munged_params)
     munged_params
@@ -15,6 +16,10 @@ class StudentParams
           params[:school_id] = School.find_or_create_by(name: params[:school_name]).id
         end
         params.delete(:school_name)
+      end
+
+      def find_department_by_id!(params)
+        params[:department] = Department.find(params[:department])
       end
 
       def find_or_create_major!(params)
