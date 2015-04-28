@@ -11,6 +11,14 @@
           <% end %>
         </tr>
         <tr>
+          <td>Department</td>
+          <% if student.department_name %>
+            <td><a href="#"><%= student.department_name %></a></td>
+          <% else %>
+            <td class="grey-text lighten-2">No information</td>
+          <% end %>
+        </tr>
+        <tr>
           <td>Major</td>
           <% if student.major_name %>
             <td><a href="#"><%= student.major_name %></a></td>

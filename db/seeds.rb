@@ -37,6 +37,25 @@ School.create([
   { name: "York University" }
 ])
 
+Department.create([
+  { name: "Agricultural and Environmental Sciences" },
+  { name: "Applied Science and Engineering" },
+  { name: "Architecture, Landscape, and Design" },
+  { name: "Arts" },
+  { name: "Dentistry" },
+  { name: "Forestry" },
+  { name: "Information" },
+  { name: "Kinesiology and Physical Education" },
+  { name: "Law" },
+  { name: "Management" },
+  { name: "Medicine" },
+  { name: "Music" },
+  { name: "Nursing" },
+  { name: "Pharmacy" },
+  { name: "Religious Studies" },
+  { name: "Science" }
+])
+
 Major.create([
   { name: "Chemical Engineering" },
   { name: "Civil Engineering" },
