@@ -35,16 +35,6 @@ ActiveRecord::Schema.define(version: 20150427233136) do
   add_index "accounts", ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true, using: :btree
   add_index "accounts", ["student_id"], name: "index_accounts_on_student_id", using: :btree
 
-  create_table "applications", force: :cascade do |t|
-    t.integer  "posting_id"
-    t.integer  "student_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "applications", ["posting_id"], name: "index_applications_on_posting_id", using: :btree
-  add_index "applications", ["student_id"], name: "index_applications_on_student_id", using: :btree
-
   create_table "employers", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -69,6 +59,16 @@ ActiveRecord::Schema.define(version: 20150427233136) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
+
+  create_table "posting_applications", force: :cascade do |t|
+    t.integer  "posting_id"
+    t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "posting_applications", ["posting_id"], name: "index_posting_applications_on_posting_id", using: :btree
+  add_index "posting_applications", ["student_id"], name: "index_posting_applications_on_student_id", using: :btree
 
   create_table "postings", force: :cascade do |t|
     t.string   "title"
@@ -117,8 +117,8 @@ ActiveRecord::Schema.define(version: 20150427233136) do
 
   add_foreign_key "accounts", "employers"
   add_foreign_key "accounts", "students"
-  add_foreign_key "applications", "postings"
-  add_foreign_key "applications", "students"
+  add_foreign_key "posting_applications", "postings"
+  add_foreign_key "posting_applications", "students"
   add_foreign_key "postings", "employers"
   add_foreign_key "resume_entries", "employers"
   add_foreign_key "resume_entries", "students"

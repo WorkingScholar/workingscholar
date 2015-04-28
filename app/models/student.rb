@@ -16,5 +16,5 @@ class Student < ActiveRecord::Base
   delegate :name, to: :major, prefix: true, allow_nil: true
 
   has_many :resume_entries, -> { order "end_date DESC" }
-  has_many :applications
+  has_many :posting_applications
 end
