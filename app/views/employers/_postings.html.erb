@@ -21,3 +21,20 @@
     <% end %>
   </tbody>
 </table>
+
+
+
+<% if current_account && current_account.username == params[:id] %>
+  <div style="position: fixed; bottom: 9px; right: 24px;">
+    <%= link_to postings_new_path,
+                data: { position: "left",
+                        delay: "50",
+                        tooltip: "Create new posting"
+                },
+                class: "tooltipped btn-floating btn-large waves-effect waves-light" do %>
+      <i class="mdi-content-add"></i>
+    <% end %>
+  </div>
+<% end %>
+
+
