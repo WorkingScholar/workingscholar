@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  authenticated :account do
+    root to: "profile#root", as: :authenticated_root
+  end
   root "home#index"
 
   scope :profile do
