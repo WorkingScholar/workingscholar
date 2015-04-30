@@ -17,6 +17,7 @@
         <td><%= pluralize(posting.duration, 'Week').upcase%></td>
         <td><%= posting.compensation.upcase%></td>
         <td><%= posting.view_count %></td>
+        <td><%= posting.posting_applications.count %></td>
       </tr>
     <% end %>
   </tbody>
