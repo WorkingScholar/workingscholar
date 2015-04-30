@@ -6,8 +6,9 @@
         <th>Employer</th>
         <th>Duration</th>
         <th>Compensation</th>
-        <th>Favorites</th>
-        <th>Apply!</th>
+        <% if current_account && current_account.student %>
+          <th>Apply</th>
+        <% end %>
         <th>Views</th>
       </tr>
     </thead>
@@ -18,25 +19,24 @@
         <td><%= link_to posting.employer.name.upcase, employer_path(posting.employer.username) %></td>
         <td><%= pluralize(posting.duration, 'WEEK').upcase%></td>
         <td><%= posting.compensation.upcase %></td>
-        <td> <%= link_to posting_path(posting),
-              data: { position: "left",
-                      delay: "50",
-                      tooltip: "Click here to favorite"
-              },
-              class: "tooltipped" do %>
-              <i class="mdi-action-favorite-outline"></i>
-            <% end %>
+
+        <% if current_account && current_account.student %>
+        <td>
+          <% if posting.applied?(current_account.student) %>
+            <i class="mdi-action-done"></i>
+          <% else %>
+            <%= link_to posting_posting_applications_path(posting),
+            data: { position: "left",
+              delay: "50",
+              tooltip: "Click here to apply"
+            },
+            method: :post,
+            class: "tooltipped" do %>
+            <i class="mdi-content-send"></i>
+           <% end %>
+          <% end %>
         </td>
-        <td> <%= link_to posting_posting_applications_path(posting),
-              data: { position: "left",
-                      delay: "50",
-                      tooltip: "Click here to apply"
-              },
-              method: :post,
-              class: "tooltipped" do %>
-              <i class="mdi-content-send"></i>
-            <% end %>
-        </td>
+        <% end %>
         <td><%= posting.view_count %></td>
       </tr>
       <% end %>
