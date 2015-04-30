@@ -65,3 +65,17 @@ Major.create([
   { name: "Music Education" },
   { name: "Performance" }
 ])
+
+a = Account.create!(name: "student",
+                    email: "student@example.com",
+                    password: "qwertyuiop",
+                    username: "test-student")
+a.student = Student.new(major_id: Major.first, school_id: School.first)
+a.save
+
+a = Account.create!(name: "employer",
+                    email: "employer@example.com",
+                    password: "qwertyuiop",
+                    username: "test-employer")
+a.employer = Employer.new
+a.save

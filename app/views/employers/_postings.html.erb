@@ -1,0 +1,41 @@
+<table class="hoverable centered">
+  <thead>
+    <tr>
+      <th>Job Postings</th>
+      <th>Project Requirements</th>
+      <th>Duration</th>
+      <th>Compensation</th>
+      <th>Posting Views</th>
+      <th>Number of Applicants</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% postings.each do |posting| %>
+      <tr>
+        <td><%= posting.title.upcase %></td>
+        <td><%= posting.description.upcase%></td>
+        <td><%= pluralize(posting.duration, 'Week').upcase%></td>
+        <td><%= posting.compensation.upcase%></td>
+        <td><%= posting.view_count %></td>
+        <td><%= posting.posting_applications.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<% if current_account && current_account.username == params[:id] %>
+  <div style="position: fixed; bottom: 9px; right: 24px;">
+    <%= link_to postings_new_path,
+                data: { position: "left",
+                        delay: "50",
+                        tooltip: "Create new posting"
+                },
+                class: "tooltipped btn-floating btn-large waves-effect waves-light" do %>
+      <i class="mdi-content-add"></i>
+    <% end %>
+  </div>
+<% end %>
+
+

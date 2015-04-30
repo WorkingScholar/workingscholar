@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150424011558) do
+ActiveRecord::Schema.define(version: 20150428172232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,29 @@ ActiveRecord::Schema.define(version: 20150424011558) do
     t.datetime "updated_at",                 null: false
   end
 
+  create_table "posting_applications", force: :cascade do |t|
+    t.integer  "posting_id"
+    t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "posting_applications", ["posting_id"], name: "index_posting_applications_on_posting_id", using: :btree
+  add_index "posting_applications", ["student_id"], name: "index_posting_applications_on_student_id", using: :btree
+
+  create_table "postings", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "employer_id"
+    t.integer  "duration"
+    t.string   "compensation"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "view_count",   default: 0
+  end
+
+  add_index "postings", ["employer_id"], name: "index_postings_on_employer_id", using: :btree
+
   create_table "resume_entries", force: :cascade do |t|
     t.integer  "student_id"
     t.string   "job_title"
@@ -95,6 +118,9 @@ ActiveRecord::Schema.define(version: 20150424011558) do
 
   add_foreign_key "accounts", "employers"
   add_foreign_key "accounts", "students"
+  add_foreign_key "posting_applications", "postings"
+  add_foreign_key "posting_applications", "students"
+  add_foreign_key "postings", "employers"
   add_foreign_key "resume_entries", "employers"
   add_foreign_key "resume_entries", "students"
   add_foreign_key "students", "majors"

@@ -1,0 +1,32 @@
+<div class="container">
+  <%= link_to postings_path, class: "btn waves-effect waves-light", method: :get do %><i class="mdi-hardware-keyboard-arrow-left"></i>
+  <% end %>
+  <div class="row">
+    <div class="col s12">
+      <h5><%= @posting.employer.name %></h5>
+      <ul class="collection">
+       <li class="collection-item avatar">
+         <i class="mdi-action-label-outline circle light-blue darken-2"></i>
+         <span class="title"><b>Job Title</b></span>
+         <p><%= @posting.title %></p>
+       </li>
+       <li class="collection-item avatar">
+         <i class="mdi-file-folder circle red lighten-2"></i>
+         <span class="title"><b>Project Requirements</b></span>
+         <p><%= @posting.description %></p>
+       </li>
+       <li class="collection-item avatar">
+         <i class="mdi-device-access-time circle cyan darken-2"></i>
+         <span class="title"><b>Duration</b></span>
+         <p><%= pluralize(@posting.duration, 'Week') %></p>
+       </li>
+       <li class="collection-item avatar">
+         <i class="mdi-editor-attach-money circle deep-orange lighten-3"></i>
+         <span class="title"><b>Compensation</b></span>
+         <p><%= @posting.compensation %></p>
+       </li>
+     </ul>
+   </div>
+</div>
+
+
