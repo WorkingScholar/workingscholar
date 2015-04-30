@@ -4,4 +4,8 @@ class Posting < ActiveRecord::Base
 
   validates :employer_id, presence: true
   validates :compensation, inclusion: { in: %w(Pay Referral) }
+
+  def applied?(student)
+    PostingApplication.where(student: student, posting: self)
+  end
 end
