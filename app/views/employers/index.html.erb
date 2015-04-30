@@ -11,10 +11,10 @@
       <tr>
         <td>
           <a href="<%= employer_path employer.username %>">
-            <%= employer.name %>
+            <%= employer.name.upcase %>
           </a>
         </td>
-        <td><%= employer.email %></td>
+        <td><%= employer.email.upcase %></td>
       </tr>
     <% end %>
   </tbody>
