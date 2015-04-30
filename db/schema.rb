@@ -35,6 +35,13 @@ ActiveRecord::Schema.define(version: 20150428172232) do
   add_index "accounts", ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true, using: :btree
   add_index "accounts", ["student_id"], name: "index_accounts_on_student_id", using: :btree
 
+  create_table "departments", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "students_count", default: 0
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
   create_table "employers", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -111,8 +118,10 @@ ActiveRecord::Schema.define(version: 20150428172232) do
     t.integer  "major_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "department_id"
   end
 
+  add_index "students", ["department_id"], name: "index_students_on_department_id", using: :btree
   add_index "students", ["major_id"], name: "index_students_on_major_id", using: :btree
   add_index "students", ["school_id"], name: "index_students_on_school_id", using: :btree
 
@@ -123,6 +132,7 @@ ActiveRecord::Schema.define(version: 20150428172232) do
   add_foreign_key "postings", "employers"
   add_foreign_key "resume_entries", "employers"
   add_foreign_key "resume_entries", "students"
+  add_foreign_key "students", "departments"
   add_foreign_key "students", "majors"
   add_foreign_key "students", "schools"
 end

@@ -7,7 +7,7 @@ class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update]
 
   def index
-    @students = Student.all.includes(:account, :school, :major, :resume_entries)
+    @students = Student.all.includes(:account, :school, :department, :major, :resume_entries)
   end
 
   def new
@@ -48,8 +48,9 @@ class StudentsController < ApplicationController
       params.require(:student)
         .permit(:name,
                 :school_name,
-                :major_name,
-                :graduation_year
+                :graduation_year,
+                :department,
+                :major_name
                )
     end
 end

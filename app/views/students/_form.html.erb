@@ -5,14 +5,7 @@
       <%= f.label :school %>
     </div>
 
-    <div class="input-field col s6">
-      <%= f.text_field :major_name, class: "validate" %>
-      <%= f.label :major %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col s3" style="margin-top: 1rem">
+    <div class="col s3">
       <%= f.label :graduation_year %>
       <div class="select-wrapper">
         <%= select_year student.graduation_year,
@@ -27,6 +20,30 @@
                           class: "browser-default"
                         } %>
       </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s6">
+      <%= f.label :department %>
+      <div class="select-wrapper">
+        <%= f.collection_select :department,
+                                Department.all,
+                                :id,
+                                :name,
+                                {
+                                  include_blank: "Select department",
+                                  selected: student.department_id || 0
+                                },
+                                {
+                                  class: "browser-default"
+                                } %>
+      </div>
+    </div>
+
+    <div class="input-field col s6">
+      <%= f.text_field :major_name, class: "validate" %>
+      <%= f.label :major %>
     </div>
   </div>
 
