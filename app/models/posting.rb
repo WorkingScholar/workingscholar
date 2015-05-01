@@ -6,6 +6,6 @@ class Posting < ActiveRecord::Base
   validates :compensation, inclusion: { in: %w(Pay Referral) }
 
   def applied?(student)
-    PostingApplication.where(student: student, posting: self)
+    PostingApplication.where(student: student, posting: self).length > 0
   end
 end
