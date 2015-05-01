@@ -60,4 +60,6 @@ Rails.application.routes.draw do
   resources :postings, only: [:index, :show, :edit, :update, :new, :create, :destroy] do
     resources :posting_applications, only: [:create, :destroy]
   end
+
+  get "applications", to: "posting_applications#all", as: :applications
 end
