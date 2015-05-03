@@ -88,13 +88,13 @@ Major.create([
 a = Account.create!(name: "student",
                     email: "student@example.com",
                     password: "qwertyuiop",
-                    username: "test-student")
+                    username: "test_student")
 a.student = Student.new(major_id: Major.first, school_id: School.first)
 a.save
 
 a = Account.create!(name: "employer",
                     email: "employer@example.com",
                     password: "qwertyuiop",
-                    username: "test-employer")
-a.employer = Employer.new
+                    username: "test_employer")
+a.employer = Employer.new(contact_email: "contact@employer.com")
 a.save

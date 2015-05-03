@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <table class="hoverable centered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>School</th>
+          <th>Department</th>
+          <th>Major</th>
+          <th>Email</th>
+          <th>Match</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @posting_applications.each do |posting_application| %>
+          <tr>
+            <td><%= posting_application.student.name  %></td>
+            <td><%= posting_application.student.school_name  %></td>
+            <td><%= posting_application.student.department_name  %></td>
+            <td><%= posting_application.student.major_name  %></td>
+            <td><%= posting_application.student.email  %></td>
+            <td>
+              <% if posting_application.matched %>
+               <i class="mdi-action-done-all"></i>
+              <% else %>
+                <%= form_for posting_application do |f| %>
+                  <%= f.hidden_field :matched, value: true %>
+                    <button class="btn-floating btn waves-effect waves-light" type="submit" name="action">
+                      <i class="mdi-content-add"></i>
+                    </button>
+                <% end %>
+              <% end %>
+              </button>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
