@@ -1,38 +1,29 @@
-<div class ="hero">
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-        <div class="container-fluid">
-        <h1 class="center">Find Your Next Project Today!</h1>
-        <div class="container">
-        <p class="flow-text">University students need jobs. Small-to-medium sized businesses need quality employees. We are in the business of connecting the two!</p>
-        </div>
-          <div class="started row center">
-            <%= link_to  new_account_registration_path, class: "btn-large waves-effect waves-light", method: :get do %>
-            <i class="mdi-social-school right"></i>I'm a Student
-            <% end %>
-            <%= link_to  new_account_registration_path, class: "btn-large waves-effect waves-light", method: :get do %>
-            <i class="mdi-maps-store-mall-directory right"></i>I'm an Employer
-            <% end %>
-          </div>
-          </div>
+<div id="splash" class="valign-wrapper">
+  <div class="container section valign">
+    <h1 class="center white-text">Find Your Next Project Today!</h1>
+    <p class="flow-text center white-text">University students need jobs. Small-to-medium sized businesses need quality employees. We are in the business of connecting the two!</p>
+    <div class="row center">
+      <%= link_to  new_account_registration_path, class: "btn-large waves-effect waves-light", method: :get do %>
+        <i class="mdi-social-school right"></i>I'm a Student
+      <% end %>
+      <%= link_to  new_account_registration_path, class: "btn-large waves-effect waves-light", method: :get do %>
+        <i class="mdi-maps-store-mall-directory right"></i>I'm an Employer
+      <% end %>
     </div>
   </div>
 </div>
 
-<div class = "container">
-
-  <section id="team">
-
+<div id="team" class="section white">
+  <div class="container">
+    <div class="row center">
+      <h2>Team</h2>
+    </div>
     <div class="row">
-      <div class="col s12 center">
-        <h2>Team</h2>
-      </div>
       <div class="col s12 m6">
         <div class="center">
           <div class="headshot">
             <%= image_tag("stuart.jpg", class: "circle") %>
             <h5 class="center">Stuart Crust</h5>
-
             <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa saepe distinctio beatae placeat expedita eos autem, neque totam ut optio quasi illum explicabo quae nihil, facere adipisci iusto commodi voluptates!</p>
           </div>
         </div>
@@ -43,140 +34,99 @@
           <div class="headshot">
             <%= image_tag("sheret.jpg", class: "circle") %>
             <h5 class="center">Sheret Ross</h5>
-
             <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, magni! At animi eveniet iure illo ratione perspiciatis, consequuntur cum beatae! Voluptas voluptates est dolorem eum provident. Totam aspernatur commodi alias!</p>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-</section>
 </div>
 
-<section class="why" id="why">
-  <div class="container">
-    <div class="section">
-
-      <div class="row">
-        <div class="col s12 center">
-          <h2>Why</h2>
-          <p class="center-align light">Small-to-medium sized businesses have demand for project-based labour but lack the financial means to utilize larger consulting and marketing firms. <br><br>This includes preparing financial statements, basic web development, web/logo design, marketing strategy, social media implementation, and other creative and business aspects. <br><br>That’s where we come in.
-            Students have a need to apply their theoretical and technical backgrounds to real-life scenarios to help launch their careers. We boast a vast array of talented students who can help your business grow. Just refine your search, and start hiring!
-          </p>
-        </div>
-      </div>
+<div id="why">
+  <div class="container section">
+    <div class="row center">
+      <h2>Why</h2>
     </div>
-
-  </div>
-</div>
-</section>
-
-<section id="what">
-  <div class="row">
-    <div class="col s12 center">
-      <h2>What</h2>
-    </div>
-    <div class="col s12 m4">
-      <div class="icon-block">
-        <h2 class="center brown-text"><i class="mdi-action-account-circle"></i></h2>
-
-        <h5 class="center">The Student</h5>
-
-        <p class="light center">Have you ever been turned down for a full-time summer position or entry-level job due to your lack of “professional” experiences? In today’s market, finding a job as a student without prior experience is nearly impossible.<br><br>
-
-
-          No more. We’ve got you covered. Sign up today to become one of our independent micro-consultants and have instant access to smaller firms looking to grow their business. </p>
-        </div>
-      </div>
-
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center brown-text"><i class="mdi-social-group"></i></h2>
-          <h5 class="center">The Company</h5>
-
-          <p class="light center">Has your firm struggled to add quality bodies to your team due to the financial constraints? Can’t find energetic, creative, and academic top-tier talent?<br><br>
-
-            Grow your business today. With WorkingScholar, companies have instant access to our vast database of top-tier academic talent. Refine your search, confirm you can meet the desired student’s requirements, and connect instantaneously.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="mdi-action-settings"></i></h2>
-            <h5 class="center">The Track Record</h5>
-
-            <p class="light center">What makes us unique from all other job posting boards is our proprietary software. Create an online track record with each project successfully completed through WorkingScholar. <br><br>Students and companies have the opportunity to rate each other based on their personal experiences. Get started today to start building your footprint!</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <section class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h3>Recently Matched</h3>
-          <h5 class="header col s12 light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum ipsum hic asperiores odit quos accusantium inventore. Fugit doloribus cupiditate asperiores, quos assumenda earum odio minima? Quisquam voluptates officiis voluptatum ipsam.</h5>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="how">
     <div class="row">
       <div class="col s12 center">
-        <h2>How</h2>
-      </div>
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center brown-text"><i class="mdi-action-account-circle"></i></h2>
-          <h5 class="center">Create an Account</h5>
-
-          <p class="light center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ullam quam, culpa? Optio temporibus deleniti magni quaerat minima dolorem itaque ex quia similique, earum tenetur corrupti eveniet repellat facilis a!</p>
-        </div>
-      </div>
-
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center brown-text"><i class="mdi-social-group"></i></h2>
-          <h5 class="center">Build Your Portfolio</h5>
-
-          <p class="light center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ullam quam, culpa? Optio temporibus deleniti magni quaerat minima dolorem itaque ex quia similique, earum tenetur corrupti eveniet repellat facilis a!</p>
-        </div>
-      </div>
-
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center brown-text"><i class="mdi-action-settings"></i></h2>
-          <h5 class="center">Launch Your Project!</h5>
-
-          <p class="light center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ullam quam, culpa? Optio temporibus deleniti magni quaerat minima dolorem itaque ex quia similique, earum tenetur corrupti eveniet repellat facilis a!</p>
-        </div>
-      </div>
+        <p class="center-align light">Small-to-medium sized businesses have demand for project-based labour but lack the financial means to utilize larger consulting and marketing firms.</p>
+        <p class="center-align light">This includes preparing financial statements, basic web development, web/logo design, marketing strategy, social media implementation, and other creative and business aspects.</p>
+        <p class="center-align light">That’s where we come in.</p>
+        <p class="center-align light">Students have a need to apply their theoretical and technical backgrounds to real-life scenarios to help launch their careers. We boast a vast array of talented students who can help your business grow. Just refine your search, and start hiring!</p>
+      </p>
     </div>
-  </section>
+  </div>
+</div>
 
-  <section class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h3>Testimonials</h3>
-          <h5 class="header col s12 light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum ipsum hic asperiores odit quos accusantium inventore. Fugit doloribus cupiditate asperiores, quos assumenda earum odio minima? Quisquam voluptates officiis voluptatum ipsam.</h5>
-        </div>
-      </div>
+<div id="what" class="section white">
+  <div class="container">
+    <div class="row center">
+      <h2>What</h2>
     </div>
-  </section>
+    <div class="row">
+      <div class="col s12 l4">
+        <h2 class="center brown-text"><i class="mdi-action-account-circle"></i></h2>
+        <h5 class="center">The Student</h5>
+        <p class="center-align light">Have you ever been turned down for a full-time summer position or entry-level job due to your lack of “professional” experiences? In today’s market, finding a job as a student without prior experience is nearly impossible.</p>
+        <p class= "center-align light">No more. We’ve got you covered. Sign up today to become one of our independent micro-consultants and have instant access to smaller firms looking to grow their business.</p>
+      </div>
 
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">Contact Us</h5>
-        </div>
+      <div class="col s12 l4">
+        <h2 class="center brown-text"><i class="mdi-social-group"></i></h2>
+        <h5 class="center">The Company</h5>
+        <p class="center-align light">Has your firm struggled to add quality bodies to your team due to the financial constraints? Can’t find energetic, creative, and academic top-tier talent?</p>
+        <p class="center-align light">Grow your business today. With WorkingScholar, companies have instant access to our vast database of top-tier academic talent. Refine your search, confirm you can meet the desired student’s requirements, and connect instantaneously.</p>
+      </div>
+
+      <div class="col s12 l4">
+        <h2 class="center brown-text"><i class="mdi-action-settings"></i></h2>
+        <h5 class="center">The Track Record</h5>
+        <p class="center-align light">What makes us unique from all other job posting boards is our proprietary software. Create an online track record with each project successfully completed through WorkingScholar.</p>
+        <p class="center-align light">Students and companies have the opportunity to rate each other based on their personal experiences. Get started today to start building your footprint!</p>
       </div>
     </div>
   </div>
+</div>
 
+<div id="recently-matched" class="section white">
+  <div class="container">
+    <div class="row center">
+      <h2 class="white-text">Recently Matched</h2>
+    </div>
+    <h5 class="flow-text white-text light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum ipsum hic asperiores odit quos accusantium inventore. Fugit doloribus cupiditate asperiores, quos assumenda earum odio minima? Quisquam voluptates officiis voluptatum ipsam.</h5>
+  </div>
+</div>
+
+<div id="how" class="section white">
+  <div class="container">
+    <div class="row center">
+      <h2>How</h2>
+    </div>
+    <div class="row">
+      <div class="col s12 l4">
+        <h2 class="center brown-text"><i class="mdi-action-account-circle"></i></h2>
+        <h5 class="center">Create an Account</h5>
+        <p class="light center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ullam quam, culpa? Optio temporibus deleniti magni quaerat minima dolorem itaque ex quia similique, earum tenetur corrupti eveniet repellat facilis a!</p>
+      </div>
+
+      <div class="col s12 l4">
+        <h2 class="center brown-text"><i class="mdi-social-group"></i></h2>
+        <h5 class="center">Build Your Portfolio</h5>
+        <p class="light center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ullam quam, culpa? Optio temporibus deleniti magni quaerat minima dolorem itaque ex quia similique, earum tenetur corrupti eveniet repellat facilis a!</p>
+      </div>
+
+      <div class="col s12 l4">
+        <h2 class="center brown-text"><i class="mdi-action-settings"></i></h2>
+        <h5 class="center">Launch Your Project!</h5>
+        <p class="light center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ullam quam, culpa? Optio temporibus deleniti magni quaerat minima dolorem itaque ex quia similique, earum tenetur corrupti eveniet repellat facilis a!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="testimonials">
+  <div class="container section">
+    <h2 class="center">Testimonials</h2>
+    <h5 class="center light">Lobem ipsum dolor sit amet, consectetur adipisicing elit. Harum ipsum hic asperiores odit quos accusantium inventore. Fugit doloribus cupiditate asperiores, quos assumenda earum odio minima? Quisquam voluptates officiis voluptatum ipsam.</h5>
+  </div>
+</div>
