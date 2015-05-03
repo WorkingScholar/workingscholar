@@ -25,6 +25,7 @@ class PostingApplicationsController < ApplicationController
   end
 
   private
+
     def posting_application_params
       params.require(:posting_application)
         .permit(:matched)
