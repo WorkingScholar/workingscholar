@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/0xazure/partial-date.git
+  revision: 2f9fda144de9ba9040c81f492014224c160fecea
+  specs:
+    partial-date (1.2.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -194,6 +200,7 @@ DEPENDENCIES
   gravatar-ultimate
   jbuilder (~> 2.0)
   jquery-rails
+  partial-date!
   pg
   puma
   rails (= 4.2.1)
