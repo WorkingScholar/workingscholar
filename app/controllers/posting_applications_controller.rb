@@ -14,8 +14,8 @@ class PostingApplicationsController < ApplicationController
     end
   end
 
-  def list #listing all applicants
-    @posting_applications = PostingApplication.where(posting_id: params(:id))
+  def applicants #listing all applicants
+    @posting_applications = PostingApplication.where(posting_id: params[:posting_id])
   end
 
   def update  #matching
