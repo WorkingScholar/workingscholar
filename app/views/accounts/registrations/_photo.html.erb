@@ -1,7 +1,9 @@
 <%= form_for @account do |f| %>
   <div>
-    <%= f.label :photo_url, "Upload Your Avatar" %>
-    <%= f.filepicker_field :photo_url %>
+    <%= f.label :photo_url, "Upload Your Display Picture" %>
+    <%= f.filepicker_field :photo_url, class:"btn-floating btn-large waves-effect waves-light" %>
+  <button class="btn-floating btn-large waves-effect waves-light" type="submit" name="action">
+    <i class="mdi-content-save"></i>
+  </button>
   </div>
-  <%= f.submit "Save Image" %>
 <% end %>
