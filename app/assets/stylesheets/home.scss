@@ -1,78 +1,45 @@
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+#splash {
+  background-image: url("https://unsplash.it/5184/3456?image=48");
+  background-size: cover;
+  background-position: 50%;
+  background-attachment: fixed;
+  min-height: 500px;
 }
-main {
-  flex: 1 0 auto;
+
+#team {
+  padding-bottom: 50px;
+}
+
+#why {
+  background-image: url("https://unsplash.it/2509/1672?image=581&blur");
+  background-size: cover;
+  background-position: 50%;
+  background-attachment: fixed;
+}
+
+#what {
+  padding-bottom: 50px;
+}
+
+#recently-matched {
+  background-image: url("https://unsplash.it/5184/3456?image=48");
+  background-size: cover;
+  background-position: 50%;
+  background-attachment: fixed;
+}
+
+#how {
+  padding-bottom: 50px;
+}
+
+#testimonials {
+  background-image: url("https://unsplash.it/4133/2745?image=668");
+  background-size: cover;
+  background-position: 50%;
+  background-attachment: fixed;
+  margin-bottom: 80px;
 }
 
 .headshot img{
   height: 160px;
-}
-
-.parallax-container {
-  min-height: 380px;
-  line-height: 0;
-  color: rgba(255,255,255,.9);
-}
-
-.parallax-container h1 {
-  padding-bottom:1%;
-}
-
-.parallax-container .section {
-  width: 100%;
-  background-image: url("https://unsplash.it/5184/3456?image=48");
-  background-size: cover;
-  background-position: 50%;
-  background-attachment: fixed;
-}
-
-@media only screen and (max-width : 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
-}
-
-div.hero {
-  min-height:100vh;
-  width: 100%;
-  background-image: url("https://unsplash.it/5184/3456?image=48");
-  background-size: cover;
-  background-position: 50%;
-  background-attachment: fixed;
-}
-
-@media only screen and (max-width : 600px) {
-  #index-banner .section {
-    top: 0;
-  }
-}
-
-.learn_more {
-  padding: 2%;
-}
-
-section.why {
-  background-image: url("https://unsplash.it/2509/1672?image=581");
-  background-size: cover;
-  background-position: 50%;
-  background-attachment: fixed;
-}
-
-section.why p {
-  font-size:24px;
-}
-
-.icon-block {
-  padding: 0 15px;
-}
-
-footer.page-footer {
-  margin: 0;
 }
