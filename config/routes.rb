@@ -61,6 +61,7 @@ Rails.application.routes.draw do
     get "applicants", to: "posting_applications#applicants", as: :applicants
     resources :posting_applications, only: [:create, :destroy]
   end
+  resources :posting_applications, only: [:update]
 
   get "applications", to: "posting_applications#all", as: :applications
 end
