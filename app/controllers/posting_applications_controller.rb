@@ -13,4 +13,11 @@ class PostingApplicationsController < ApplicationController
       redirect_to postings_path
     end
   end
+
+  def list #listing all applicants
+    @posting_applications = PostingApplication.where(posting_id: params(:id))
+  end
+
+  def update  #matching
+  end
 end

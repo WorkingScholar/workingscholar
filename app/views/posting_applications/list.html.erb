@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <table class="hoverable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>School</th>
+          <th>Department</th>
+          <th>Major</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @posting_applications.each do |posting_application| %>
+          <tr>
+            <td><%= posting_application.posting.student.name  %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
