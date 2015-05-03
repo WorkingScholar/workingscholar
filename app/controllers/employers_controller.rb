@@ -42,5 +42,8 @@ class EmployersController < ApplicationController
     end
 
     def employer_params
+      params.require(:employer)
+        .permit(:contact_email
+        )
     end
 end
