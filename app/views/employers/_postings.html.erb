@@ -17,13 +17,15 @@
         <td><%= pluralize(posting.duration, 'Week').upcase%></td>
         <td><%= posting.compensation.upcase%></td>
         <td><%= posting.view_count %></td>
-        <td><%= posting.posting_applications.count %></td>
+        <td><%= link_to posting.posting_applications.count, posting_applicants_path(posting),
+              data: { position: "left",
+                      delay: "50",
+                      tooltip: "Click to see applicants"},
+              class: "tooltipped"%></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-
 
 <% if current_account && current_account.username == params[:id] %>
   <div style="position: fixed; bottom: 9px; right: 24px;">

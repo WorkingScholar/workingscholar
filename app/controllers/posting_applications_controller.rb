@@ -13,4 +13,21 @@ class PostingApplicationsController < ApplicationController
       redirect_to postings_path
     end
   end
+
+  def applicants
+    @posting_applications = PostingApplication.where(posting_id: params[:posting_id])
+  end
+
+  def update
+    @posting_application = PostingApplication.find(params[:id])
+    @posting_application.update_attributes(posting_application_params)
+    redirect_to posting_applicants_path @posting_application.posting
+  end
+
+  private
+
+    def posting_application_params
+      params.require(:posting_application)
+        .permit(:matched)
+    end
 end

@@ -1,12 +1,13 @@
 <div class="container">
   <div class="row">
-    <table class="hoverable">
+    <table class="hoverable centered">
       <thead>
         <tr>
           <th>Title</th>
           <th>Company</th>
           <th>Duration</th>
           <th>Compensation</th>
+          <th>Matched?</th>
         </tr>
       </thead>
       <tbody>
@@ -16,6 +17,13 @@
             <td><%= link_to posting_application.posting.employer.name.upcase, posting_application.posting.employer %></td>
             <td><%= pluralize(posting_application.posting.duration, 'Week').upcase%></td>
             <td><%= posting_application.posting.compensation.upcase %></td>
+            <td>
+              <% if posting_application.matched %>
+                <i class="mdi-action-done-all"></i>
+              <% else %>
+                <i class="mdi-action-autorenew"></i>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>
