@@ -1,0 +1,7 @@
+<%= form_for @account do |f| %>
+  <div>
+    <%= f.label :photo_url, "Upload Your Avatar" %>
+    <%= f.filepicker_field :photo_url %>
+  </div>
+  <%= f.submit "Save Image" %>
+<% end %>

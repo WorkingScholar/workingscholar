@@ -19,4 +19,8 @@ class Account < ActiveRecord::Base
   def avatar_url
     Gravatar.new(email).image_url(s: 100)
   end
+
+  def img_url
+    photo_url || avatar_url
+  end
 end
