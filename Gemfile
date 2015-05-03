@@ -33,6 +33,9 @@ gem "gravatar-ultimate"
 # Markdown processing
 gem "redcarpet"
 
+# Filepicker
+gem "filepicker-rails"
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem "sdoc", "~> 0.4.0"
@@ -47,6 +50,8 @@ group :development, :test do
 
   # Static code analysis & file linting
   gem "rubocop"
+
+  gem "dotenv-rails"
 end
 
 group :production do
