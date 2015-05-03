@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <table class="hoverable">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Company</th>
+          <th>Duration</th>
+          <th>Compensation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @posting_applications.each do |posting_application| %>
+          <tr>
+            <td><%= link_to posting_application.posting.title.upcase, posting_application.posting %></td>
+            <td><%= link_to posting_application.posting.employer.name.upcase, posting_application.posting.employer %></td>
+            <td><%= pluralize(posting_application.posting.duration, 'Week').upcase%></td>
+            <td><%= posting_application.posting.compensation.upcase %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

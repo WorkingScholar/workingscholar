@@ -1,5 +1,8 @@
 <% if current_account %>
   <li><%= link_to "My Profile", profile_path(current_account.username), class: "nav-item" %></li>
+  <% if current_account.student %>
+    <li><%= link_to "My Applications", applications_path, class: "nav-item" %></li>
+  <% end %>
   <li class="divider"></li>
   <li><%= link_to "Logout", destroy_account_session_path, method: :delete, class: "nav-item" %></li>
 <% else %>
