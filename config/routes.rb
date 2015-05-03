@@ -58,6 +58,7 @@ Rails.application.routes.draw do
 
   resources :employers, only: [:index, :show, :new, :create, :update]
   resources :postings, only: [:index, :show, :edit, :update, :new, :create, :destroy] do
+    get "applicants", to: "posting_applications#applicants", as: :applicants
     resources :posting_applications, only: [:create, :destroy]
   end
 
