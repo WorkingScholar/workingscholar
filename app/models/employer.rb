@@ -7,5 +7,5 @@ class Employer < ActiveRecord::Base
   delegate :email, to: :account
   delegate :name, to: :account
 
-  has_many :postings
+  has_many :postings, dependent: :destroy
 end
