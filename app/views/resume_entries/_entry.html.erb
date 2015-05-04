@@ -28,10 +28,10 @@
           <% end %>
         </div>
         <div class="duration">
-          <% if entry.start_date.present? && entry.end_date.present? %>
-            <i class="fa fa-calendar-o"></i><%= entry.start_date %> to <%= entry.end_date %>
-          <% else %>
+          <% if entry.partial_start_date == 0 && entry.partial_end_date == 0 %>
             <i class="fa fa-calendar-o"></i><span class="grey-text lighten-2">No information</span>
+          <% else %>
+            <i class="fa fa-calendar-o"></i><%= resume_date_span entry.partial_start_date, entry.partial_end_date, entry.current %>
           <% end %>
         </div>
       </div>

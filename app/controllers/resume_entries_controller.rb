@@ -44,9 +44,10 @@ class ResumeEntriesController < ApplicationController
       params.require(:resume_entry)
         .permit(:job_title,
                 :employer_name,
-                :start_date,
-                :end_date,
-                :description
+                :description,
+                :current,
+                start_date: [:year, :month, :day],
+                end_date: [:year, :month, :day]
                )
     end
 end

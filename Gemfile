@@ -36,6 +36,9 @@ gem "redcarpet"
 # Filepicker
 gem "filepicker-rails"
 
+# Partial date storage & retrieval
+gem "partial-date", git: "https://github.com/0xazure/partial-date.git"
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem "sdoc", "~> 0.4.0"

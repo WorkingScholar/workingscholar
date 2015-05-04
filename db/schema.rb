@@ -98,11 +98,12 @@ ActiveRecord::Schema.define(version: 20150503191801) do
     t.string   "job_title"
     t.string   "employer_name"
     t.integer  "employer_id"
-    t.string   "start_date"
-    t.string   "end_date"
     t.text     "description"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.integer  "partial_start_date", default: 0
+    t.integer  "partial_end_date",   default: 0
+    t.boolean  "current",            default: false
   end
 
   add_index "resume_entries", ["employer_id"], name: "index_resume_entries_on_employer_id", using: :btree
