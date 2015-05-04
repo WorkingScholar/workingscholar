@@ -63,7 +63,7 @@ Rails.application.routes.draw do
     resources :posting_applications, only: [:create, :destroy]
   end
   resources :posting_applications, only: [:update]
-  resources :accounts, only: [:update]
+  resources :accounts, only: [:update, :destroy]
 
   get "applications", to: "posting_applications#all", as: :applications
 end

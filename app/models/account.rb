@@ -11,10 +11,10 @@ class Account < ActiveRecord::Base
                                  message: "only allows alphanumeric and _." }
   validates :name, presence: true
 
-  belongs_to :student
+  belongs_to :student, dependent: :destroy
   has_many :resume_entries, through: :student
 
-  belongs_to :employer
+  belongs_to :employer, dependent: :destroy
 
   def avatar_url
     Gravatar.new(email).image_url(s: 100)
