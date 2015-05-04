@@ -12,7 +12,7 @@ class Accounts::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.for(:account_update).concat([:username, :name])
   end
 
-  def after_update_path_for(resource)
-    profile_path(resource.username)
+  def after_update_path_for(*)
+    profile_path
   end
 end

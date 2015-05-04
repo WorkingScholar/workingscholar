@@ -2,7 +2,7 @@ class AccountsController < ApplicationController
   def update
     @account = Account.friendly.find(params[:id])
     @account.update(account_params)
-    redirect_to profile_path(@account)
+    redirect_to profile_path
   end
 
   def account_params

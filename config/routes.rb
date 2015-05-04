@@ -20,7 +20,8 @@ Rails.application.routes.draw do
   root "home#index"
 
   scope :profile do
-    get "/:id", to: "profile#show", as: :profile
+    get "/", to: "profile#show", as: :profile
+    get "postings", to: "postings#all", as: :profile_postings
   end
 
   devise_for :accounts,
