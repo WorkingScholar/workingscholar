@@ -1,26 +1,114 @@
-<div class="input-field col s12">
-  <%= f.text_field :job_title %>
-  <%= f.label :job_title %><br>
-</div>
-<div class="input-field col s12">
-  <%= f.text_field :employer_name %>
-  <%= f.label :employer_name %><br>
-</div>
-<div class="input-field col s6">
-  <input id="resume_entry_start_date" class="datepicker" type="date" name="resume_entry[start_date]">
-  <%= f.label :start_date %>
-</div>
-<div class="input-field col s6">
-  <input id="resume_entry_end_date" class="datepicker" type="date" name="resume_entry[end_date]">
-  <%= f.label :end_date %>
-</div>
-<div class="input-field col s12">
-  <%= f.text_area :description, class: "materialize-textarea" %>
-  <%= f.label :description %>
+<div class="row">
+  <div class="input-field col s12">
+    <%= f.text_field :job_title %>
+    <%= f.label :job_title %><br>
+  </div>
 </div>
 
-<div class="actions input-field col s12">
-  <button class="btn waves-effect waves-light" type="submit" name="action"><%= button_text %>
-    <i class="mdi-content-send right"></i>
-  </button>
+<div class="row">
+  <div class="input-field col s12">
+    <%= f.text_field :employer_name %>
+    <%= f.label :employer_name %><br>
+  </div>
+</div>
+
+<div class="row">
+  <div class="input-field col s5">
+    <small class="grey-text">Start date</small>
+    <div id="resume_entry_start_date" class="select-wrapper">
+      <div class="col s3">
+        <%= select_year entry.loaded_partial_start_date.year,
+                        {
+                          start_year: 10.years.from_now.year,
+                          end_year: 1950,
+                          prompt: "Year",
+                          prefix: "resume_entry[start_date]"
+                        },
+                        {
+                          class: "browser-default"
+                        } %>
+      </div>
+      <div class="col s3">
+        <%= select_month entry.loaded_partial_start_date.month,
+                         {
+                           use_short_month: true,
+                           prompt: "Month",
+                           prefix: "resume_entry[start_date]"
+                         },
+                         {
+                           class: "browser-default"
+                         } %>
+      </div>
+      <div class="col s3">
+        <%= select_day entry.loaded_partial_start_date.day,
+                         {
+                           prompt: "Day",
+                           prefix: "resume_entry[start_date]"
+                         },
+                         {
+                           class: "browser-default"
+                         } %>
+      </div>
+    </div>
+  </div>
+
+  <div class="input-field col s5">
+    <small class="grey-text">End date</small>
+    <div id="resume_entry_end_date" class="select-wrapper">
+      <div class="col s3">
+        <%= select_year entry.loaded_partial_end_date.year,
+                        {
+                          start_year: 10.years.from_now.year,
+                          end_year: 1950,
+                          prompt: "Year",
+                          prefix: "resume_entry[end_date]"
+                        },
+                        {
+                          class: "browser-default"
+                        } %>
+      </div>
+      <div class="col s3">
+        <%= select_month entry.loaded_partial_end_date.month,
+                         {
+                           use_short_month: true,
+                           prompt: "Month",
+                           prefix: "resume_entry[end_date]"
+                         },
+                         {
+                           class: "browser-default"
+                         } %>
+      </div>
+      <div class="col s3">
+        <%= select_day entry.loaded_partial_end_date.day,
+                         {
+                           prompt: "Day",
+                           prefix: "resume_entry[end_date]"
+                         },
+                         {
+                           class: "browser-default"
+                         } %>
+      </div>
+    </div>
+  </div>
+
+  <div class="input-field col s2">
+    <p>
+      <%= f.check_box :current %>
+      <%= f.label :current %>
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field col s12">
+    <%= f.text_area :description, class: "materialize-textarea" %>
+    <%= f.label :description %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="actions input-field col s12">
+    <button class="btn waves-effect waves-light" type="submit" name="action"><%= button_text %>
+      <i class="mdi-content-send right"></i>
+    </button>
+  </div>
 </div>
