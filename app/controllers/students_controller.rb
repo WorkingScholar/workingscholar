@@ -18,8 +18,7 @@ class StudentsController < ApplicationController
     munged_params = StudentParams.build(student_params)
     @student = current_account.build_student(munged_params)
     if @student.save && current_account.save
-      redirect_to profile_path(current_account.username),
-                  notice: "Successfully updated profile."
+      redirect_to profile_path, notice: "Updated profile sucessfully."
     else
       render :new
     end

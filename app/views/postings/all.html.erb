@@ -1,0 +1,54 @@
+<div class="container">
+  <table class="hoverable bordered centered">
+    <thead>
+      <tr>
+        <th>Job Title</th>
+        <th>Employer</th>
+        <th>Duration</th>
+        <th>Compensation</th>
+        <% if current_account && current_account.student %>
+          <th>Apply</th>
+        <% end %>
+        <th>Views</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @postings.each do |posting| %>
+      <tr>
+        <td><%= link_to posting.title.upcase, posting_path(posting) %></td>
+        <td><%= link_to posting.employer.name.upcase, employer_path(posting.employer.username) %></td>
+        <td><%= pluralize(posting.duration, 'WEEK').upcase%></td>
+        <td><%= posting.compensation.upcase %></td>
+        <% if current_account && current_account.student %>
+        <td>
+          <% if posting.applied?(current_account.student) %>
+            <i class="mdi-action-done"></i>
+          <% else %>
+            <%= link_to posting_posting_applications_path(posting),
+            data: { position: "left",
+              delay: "50",
+              tooltip: "Click here to apply"
+            },
+            method: :post,
+            class: "tooltipped" do %>
+            <i class="mdi-content-send"></i>
+           <% end %>
+          <% end %>
+        </td>
+        <% end %>
+        <td><%= posting.view_count %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div style="position: fixed; bottom: 9px; right: 24px;">
+  <%= link_to new_posting_path,
+              data: { position: "left",
+                      delay: "50",
+                      tooltip: "Create new posting"
+              },
+              class: "tooltipped btn-floating btn-large waves-effect waves-light" do %>
+    <i class="mdi-content-add"></i>
+  <% end %>
+</div>

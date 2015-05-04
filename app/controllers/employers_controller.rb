@@ -15,8 +15,7 @@ class EmployersController < ApplicationController
   def create
     @employer = current_account.build_employer(employer_params)
     if @employer.save
-      redirect_to profile_path(current_account.username),
-                  notice: "Successfully updated profile."
+      redirect_to profile_path, notice: "Updated profile sucessfully."
     else
       render :new
     end
@@ -28,8 +27,7 @@ class EmployersController < ApplicationController
 
   def update
     if @employer.update_attributes(employer_params)
-      redirect_to profile_path(current_account.username),
-                  notice: "Successfully updated profile."
+      redirect_to profile_path, notice: "Updated profile sucessfully."
     else
       render "edit"
     end

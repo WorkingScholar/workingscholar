@@ -1,8 +1,7 @@
 <div class="row">
-  <div class="col s4">
+  <div class="col s2">
     <ul class="tabs">
       <li class="tab col s2"><a href="#profile">Profile</a></li>
-      <li class="tab col s2"><a href="#postings">Postings</a></li>
     </ul>
   </div>
   <div id="profile" class="col s12">
@@ -10,10 +9,4 @@
       <%= render "employers/profile", employer: employer %>
     </div>
   </div>
-  <div id="postings" class="col s12">
-    <div class="section">
-      <%= render "employers/postings", postings: employer.postings %>
-    </div>
-  </div>
 </div>
-

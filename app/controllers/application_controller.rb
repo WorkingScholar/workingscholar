@@ -6,11 +6,10 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_account!
 
   def after_sign_in_path_for(*)
-    profile_path(current_account.username)
+    profile_path
   end
 
   def profile_completedness!
-    redirect_to profile_path(current_account.username) if current_account.student ||
-                                                          current_account.employer
+    redirect_to profile_path if current_account.student || current_account.employer
   end
 end

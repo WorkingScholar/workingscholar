@@ -14,16 +14,14 @@
         <% else %>
           <%= account.username %>
         <% end %>
-        <% if current_account && current_account.username == params[:id] %>
-          <a href="#" class="profile-actions dropdown-button right" data-activates="profile-actions">
-            <i class="mdi-navigation-more-vert"></i>
-          </a>
-          <ul id="profile-actions" class="dropdown-content">
-            <li>
-              <%= link_to "Edit", edit_profile_path(account.username) %>
-            </li>
-          </ul>
-        <% end %>
+        <a href="#" class="profile-actions dropdown-button right" data-activates="profile-actions">
+          <i class="mdi-navigation-more-vert"></i>
+        </a>
+        <ul id="profile-actions" class="dropdown-content">
+          <li>
+            <%= link_to "Edit", edit_profile_path(account.username) %>
+          </li>
+        </ul>
       </h5>
     </div>
 

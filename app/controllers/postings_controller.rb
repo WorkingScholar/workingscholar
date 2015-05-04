@@ -2,6 +2,10 @@ class PostingsController < ApplicationController
   skip_before_action :authenticate_account!, only: [:index, :show]
   before_action :set_posting, only: [:edit, :show, :update, :destroy]
 
+  def all
+    @postings = Posting.posted_by(current_account.employer)
+  end
+
   def index
     @postings = Posting.all
   end
