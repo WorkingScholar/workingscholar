@@ -27,6 +27,17 @@
        </li>
      </ul>
    </div>
+   <div class="actions input-field col s12">
+       <%= link_to posting_posting_applications_path(@posting),
+                   data: { position: "left",
+                     delay: "50",
+                     tooltip: "Click here to apply"
+                   },
+                   method: :post,
+                   class: "tooltipped" do %>
+                   <i class="mdi-content-send"></i>
+        <% end %>
+   </div>
 </div>
 
 
