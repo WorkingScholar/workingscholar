@@ -19,7 +19,6 @@
         <td><%= link_to posting.employer.name.upcase, employer_path(posting.employer.username) %></td>
         <td><%= pluralize(posting.duration, 'WEEK').upcase%></td>
         <td><%= posting.compensation.upcase %></td>
-
         <% if current_account && current_account.student %>
         <td>
           <% if posting.applied?(current_account.student) %>
