@@ -95,18 +95,16 @@ a = Account.create!(name: "Bob Smith",
                     email: "bob@example.com",
                     password: "qwertyuiop",
                     username: "bob_smith")
-a.student = Student.new(major_id: Major.where(name: "Marketing"),
-                        school_id: School.where(name: "McGill University"),
-                        department_id: Department.where(name: "Management"))
+a.student = Student.new(major: Major.where(name: "Marketing").first,
+                        department: Department.where(name: "Management").first)
 a.save
 
 a = Account.create!(name: "Jim Ryan",
                     email: "jim@example.com",
                     password: "qwertyuiop",
                     username: "jim_ryan")
-a.student = Student.new(major_id: Major.where(name: "Mechanical Engineering"),
-                        school_id: School.where(name: "University of Toronto"),
-                        department_id: Department.where(name: "Applied Science and Engineering"))
+a.student = Student.new(major: Major.where(name: "Mechanical Engineering").first,
+                        department: Department.where(name: "Applied Science and Engineering").first)
 a.save
 
 a = Account.create!(name: "ABC Marketing Agency",
@@ -129,6 +127,19 @@ Posting.create!(title: "Marketing Assistant",
                 description: "Updates competitor database by inputting data from field sales;
                                   compiling, consolidating, formatting, and summarizing information,
                                   graphs, and presentations; distributing reports.",
-                compensation: "PAY",
+                compensation: "Pay",
                 duration: 2,
                 employer: employer_one)
+
+Posting.create!(title: "Social Media Analyst",
+                description: "The Social Media Analyst will implement the company’s Social Media
+                marketing strategy.",
+                compensation: "Referral",
+                duration: 3,
+                employer: employer_one)
+
+Posting.create!(title: "Junior Software Developer",
+                description: "Developes an internal CRM software",
+                compensation: "Pay",
+                duration: 4,
+                employer: employer_two)
