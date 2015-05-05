@@ -8,9 +8,11 @@
 
     <%= render "divider" %>
 
+    <% if @account.student || @account.employer %>
     <%= render "edit_profile" %>
 
     <%= render "divider" %>
+    <% end %>
 
     <%= render "delete_account" %>
   </div>

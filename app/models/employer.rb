@@ -6,6 +6,7 @@ class Employer < ActiveRecord::Base
   delegate :username, to: :account
   delegate :email, to: :account
   delegate :name, to: :account
+  delegate :img_url, to: :account
 
   has_many :postings, dependent: :destroy
 end

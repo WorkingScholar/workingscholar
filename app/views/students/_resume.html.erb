@@ -9,7 +9,7 @@
 <% else %>
   <div class="center-align grey-text" style="margin-top: 5rem;">No information</div>
 <% end %>
-<% if current_account && current_account.username == params[:id] %>
+<% if controller_name == "profile" %>
   <div style="position: fixed; bottom: 9px; right: 24px;">
     <%= link_to new_student_resume_entry_path(student),
                 data: { position: "left",

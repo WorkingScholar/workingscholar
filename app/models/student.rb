@@ -1,5 +1,3 @@
-require "gravatar-ultimate"
-
 class Student < ActiveRecord::Base
   extend FriendlyId
   friendly_id :username
@@ -8,6 +6,7 @@ class Student < ActiveRecord::Base
   delegate :username, to: :account
   delegate :email, to: :account
   delegate :name, to: :account
+  delegate :img_url, to: :account
 
   belongs_to :school, counter_cache: true
   delegate :name, to: :school, prefix: true, allow_nil: true
@@ -19,6 +18,6 @@ class Student < ActiveRecord::Base
   belongs_to :major, counter_cache: true
   delegate :name, to: :major, prefix: true, allow_nil: true
 
-  has_many :resume_entries, -> { order "end_date DESC" }, dependent: :destroy
+  has_many :resume_entries, -> { order "abs(partial_end_date) DESC" }, dependent: :destroy
   has_many :posting_applications, dependent: :destroy
 end

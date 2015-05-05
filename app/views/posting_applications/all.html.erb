@@ -1,32 +1,32 @@
 <div class="container">
-  <div class="row">
-    <table class="hoverable centered">
-      <thead>
+  <table class="hoverable centered">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Employer</th>
+        <th>Duration</th>
+        <th>Compensation</th>
+        <th>Views</th>
+        <th>Matched</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @posting_applications.each do |posting_application| %>
         <tr>
-          <th>Title</th>
-          <th>Company</th>
-          <th>Duration</th>
-          <th>Compensation</th>
-          <th>Matched?</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @posting_applications.each do |posting_application| %>
-          <tr>
-            <td><%= link_to posting_application.posting.title.upcase, posting_application.posting %></td>
-            <td><%= link_to posting_application.posting.employer.name.upcase, posting_application.posting.employer %></td>
-            <td><%= pluralize(posting_application.posting.duration, 'Week').upcase%></td>
-            <td><%= posting_application.posting.compensation.upcase %></td>
-            <td>
+          <td><%= link_to posting_application.title, posting_path(posting_application.posting) %></td>
+          <td><%= link_to posting_application.employer.name, employer_path(posting_application.employer.username) %></td>
+          <td><%= pluralize(posting_application.duration, 'week') %></td>
+          <td><%= posting_application.compensation.upcase %></td>
+          <td><%= posting_application.view_count %></td>
+          <td>
               <% if posting_application.matched %>
-                <i class="mdi-action-done-all"></i>
+                <i class="mdi-action-done-all tooltipped" data-position="left" data-delay="50" data-tooltip="Matched sucessfully"></i>
               <% else %>
-                <i class="mdi-action-autorenew"></i>
+                <i class="mdi-action-autorenew tooltipped" data-position="left" data-delay="50" data-tooltip="Awaiting matching"></i>
               <% end %>
             </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
