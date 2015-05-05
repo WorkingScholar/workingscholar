@@ -17,6 +17,8 @@
 //= require navbar
 //= require typeahead
 //
+//= require home
+//
 //= require schools
 //= require majors
 //

@@ -95,7 +95,22 @@
     <div class="row center">
       <h2 class="white-text">Recently Matched</h2>
     </div>
-    <h5 class="flow-text white-text light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum ipsum hic asperiores odit quos accusantium inventore. Fugit doloribus cupiditate asperiores, quos assumenda earum odio minima? Quisquam voluptates officiis voluptatum ipsam.</h5>
+  </div>
+
+  <div id="recently-matched-slider" class="slider">
+    <ul class="slides">
+      <% @recently_matched.each do |matched| %>
+      <li>
+        <div class="caption center-align">
+          <h4>
+            <%= link_to matched.student.name, student_path(matched.student) -%>
+            <%= " matched with " -%>
+            <%= link_to matched.posting.employer.name, employer_path(matched.posting.employer.name) -%>
+          </h4>
+        </div>
+      </li>
+      <% end %>
+    </ul>
   </div>
 </div>
 
