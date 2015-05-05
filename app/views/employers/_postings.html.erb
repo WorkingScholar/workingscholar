@@ -29,7 +29,7 @@
 
 <% if current_account && current_account.username == params[:id] %>
   <div style="position: fixed; bottom: 9px; right: 24px;">
-    <%= link_to postings_new_path,
+    <%= link_to new_posting_path,
                 data: { position: "left",
                         delay: "50",
                         tooltip: "Create new posting"
@@ -39,5 +39,3 @@
     <% end %>
   </div>
 <% end %>
-
-
