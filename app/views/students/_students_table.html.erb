@@ -1,9 +1,10 @@
 <table class="hoverable">
   <thead>
     <tr>
+      <th></th>
       <th>Full Name</th>
-      <th>Email</th>
       <th>School</th>
+      <th>Department</th>
       <th>Major</th>
     </tr>
   </thead>
@@ -11,16 +12,18 @@
     <% students.each do |student| %>
       <tr>
         <td>
+          <img src="<%= student.img_url %>" class="avatar-small circle"></img>
+        </td>
+        <td>
           <a href="<%= student_path student.username %>">
-            <%= student.name.upcase%>
+            <%= student.name %>
           </a>
         </td>
-        <td><%= student.email.upcase %></td>
         <td>
           <% if student.school_name %>
-            <%= student.school_name.upcase %>
+            <%= student.school_name %>
           <% else %>
-            <div class="grey-text">NO INFORMATION</div>
+            <div class="grey-text">No information</div>
           <% end %>
         </td>
         <td>
@@ -32,9 +35,9 @@
         </td>
         <td>
           <% if student.major_name %>
-            <%= student.major_name.upcase %>
+            <%= student.major_name %>
           <% else %>
-            <div class="grey-text">NO INFORMATION</div>
+            <div class="grey-text">No information</div>
           <% end %>
         </td>
       </tr>

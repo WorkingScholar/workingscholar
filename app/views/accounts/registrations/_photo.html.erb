@@ -1,17 +1,22 @@
-<h5>Edit Photo</h5>
 <div class="row">
-  <div class="section">
-    <div class="col s4">
-      <%= form_for @account do |f| %>
-        <div>
-          <%= f.label :photo_url, "Upload Your Display Picture" %>
-          <%= f.filepicker_field :photo_url, class:"waves-effect waves-light btn" %>
-        <button class="btn-floating btn waves-effect waves-light" type="submit" name="action">
-          <i class="mdi-content-save"></i>
-        </button>
-        </div>
-      <% end %>
-    </div>
-  </div>
+  <h5>Edit Photo</h5>
 </div>
 
+<div class="row">
+  <%= form_for @account do |f| %>
+    <div class="row">
+        <div class="col s2 center-align">
+          <div class="profile-avatar">
+            <img src="<%= @account.img_url %>" alt="avatar" class="responsive-img circle">
+          </div>
+          <%= f.label :photo_url, "Upload your display picture" %>
+        </div>
+    </div>
+
+    <div class="row">
+      <%= f.filepicker_field :photo_url, class:"waves-effect waves-light btn" %>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Upload
+        <i class="mdi-file-cloud-upload right"></i>
+      </button>
+  <% end %>
+</div>

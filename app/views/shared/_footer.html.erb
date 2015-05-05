@@ -1,7 +1,30 @@
-<footer class="page-footer center-align">
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col s2 offset-s4">
+        <h5 class="white-text">About</h5>
+        <ul>
+          <li><a href="/#team" class="white-text">Team</a></li>
+          <li><a href="/#why" class="white-text">Why</a></li>
+          <li><a href="/#what" class="white-text">What</a></li>
+          <li><a href="/#how" class="white-text">How</a></li>
+        </ul>
+      </div>
+      <div class="col s2">
+        <h5 class="white-text">Listings</h5>
+        <ul>
+          <li><a href="<%= employers_path %>" class="white-text">Employers</a></li>
+          <li><a href="<%= students_path %>" class="white-text">Students</a></li>
+          <li><a href="<%= postings_path %>" class="white-text">Job Postings</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
   <div class="footer-copyright">
-
-    Copyright <a class="brown-text text-lighten-3" href="#">WorkingScholar</a>
-
+    <div class="container">
+      <div class="center">
+        Copyright &copy; <%= Date.today.year %> <a class="brown-text text-lighten-3" href="/">WorkingScholar</a>
+      </div>
+    </div>
   </div>
 </footer>

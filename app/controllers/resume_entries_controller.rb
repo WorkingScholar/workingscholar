@@ -12,7 +12,7 @@ class ResumeEntriesController < ApplicationController
     @resume_entry = current_account.student.resume_entries.build(munged_params)
     if @resume_entry.save
       redirect_to student_path(current_account.student),
-                  notice: "Successfully created new resume entry."
+                  notice: "Created new resume entry sucessfully."
     else
       render :new
     end
@@ -22,7 +22,7 @@ class ResumeEntriesController < ApplicationController
     munged_params = ResumeEntryParams.build(resume_params)
     if @resume_entry.update(munged_params)
       redirect_to student_path(current_account.student),
-                  notice: "Successfully updated resume entry."
+                  notice: "Updated resume entry sucessfully."
     else
       render :edit
     end
@@ -31,7 +31,7 @@ class ResumeEntriesController < ApplicationController
   def destroy
     @resume_entry.destroy
     redirect_to student_path(current_account.student),
-                notice: "Resume entry was successfully deleted."
+                notice: "Resume entry was deleted successfully."
   end
 
   private

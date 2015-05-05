@@ -6,6 +6,7 @@
   <% if current_account.employer %>
     <li><%= link_to "My Postings", profile_postings_path, class: "nav-item" %></li>
   <% end %>
+  <li><%= link_to "Settings", edit_profile_path(current_account.username), class: "nav-item" %></li>
   <li class="divider"></li>
   <li><%= link_to "Logout", destroy_account_session_path, method: :delete, class: "nav-item" %></li>
 <% else %>

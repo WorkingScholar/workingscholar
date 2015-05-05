@@ -25,7 +25,7 @@ module ResumeEntriesHelper
     date_span << stringify_partial_date(start_date) if start_date > 0
     date_span << " to " if start_date != 0 && end_date != 0
     if present
-      date_span << "Present"
+      date_span << " to Present"
     else
       date_span << stringify_partial_date(end_date)
     end
