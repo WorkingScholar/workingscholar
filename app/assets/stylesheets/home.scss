@@ -26,6 +26,19 @@
   background-size: cover;
   background-position: 50%;
   background-attachment: fixed;
+
+  a {
+    color: #fff;
+    text-decoration: underline;
+  }
+}
+
+.slider .slides {
+  background-color: inherit;
+}
+
+.slider .indicators .indicator-item.active {
+  background-color: $secondary-color;
 }
 
 #how {
