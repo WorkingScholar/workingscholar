@@ -73,7 +73,13 @@ Major.create([
   { name: "Humanities" },
   { name: "Life Sciences" },
   { name: "Physical and Mathematical Sciences" },
-  { name: "Rotman Commerce" },
+  { name: "Marketing" },
+  { name: "Finance" },
+  { name: "Accounting" },
+  { name: "Economics" },
+  { name: "General Management" },
+  { name: "Operations Management" },
+  { name: "Industrial Relations" },
   { name: "Social Science" },
   { name: "Physical and Health Education" },
   { name: "Kinesiology" },
@@ -85,16 +91,44 @@ Major.create([
   { name: "Performance" }
 ])
 
-a = Account.create!(name: "student",
-                    email: "student@example.com",
+a = Account.create!(name: "Bob Smith",
+                    email: "bob@example.com",
                     password: "qwertyuiop",
-                    username: "test_student")
-a.student = Student.new(major_id: Major.first, school_id: School.first)
+                    username: "bob_smith")
+a.student = Student.new(major_id: Major.where(name: "Marketing"),
+                        school_id: School.where(name: "McGill University"),
+                        department_id: Department.where(name: "Management"))
 a.save
 
-a = Account.create!(name: "employer",
-                    email: "employer@example.com",
+a = Account.create!(name: "Jim Ryan",
+                    email: "jim@example.com",
                     password: "qwertyuiop",
-                    username: "test_employer")
-a.employer = Employer.new(contact_email: "contact@employer.com")
+                    username: "jim_ryan")
+a.student = Student.new(major_id: Major.where(name: "Mechanical Engineering"),
+                        school_id: School.where(name: "University of Toronto"),
+                        department_id: Department.where(name: "Applied Science and Engineering"))
 a.save
+
+a = Account.create!(name: "ABC Marketing Agency",
+                    email: "abc-marketing@example.com",
+                    password: "qwertyuiop",
+                    username: "abc_marketing")
+employer_one = Employer.new(contact_email: "abc-contact@example.com")
+a.employer = employer_one
+a.save
+
+a = Account.create!(name: "Timber Construction Company",
+                    email: "timber_construction@example.com",
+                    password: "qwertyuiop",
+                    username: "timber_construction")
+employer_two = Employer.new(contact_email: "timber-contact@example.com")
+a.employer = employer_two
+a.save
+
+Posting.create!(title: "Marketing Assistant",
+                description: "Updates competitor database by inputting data from field sales;
+                                  compiling, consolidating, formatting, and summarizing information,
+                                  graphs, and presentations; distributing reports.",
+                compensation: "PAY",
+                duration: 2,
+                employer: employer_one)
