@@ -1,8 +1,8 @@
 <div class="container">
-  <table class="hoverable bordered centered">
+  <table class="hoverable centered">
     <thead>
       <tr>
-        <th>Job Title</th>
+        <th>Title</th>
         <th>Employer</th>
         <th>Duration</th>
         <th>Compensation</th>
@@ -15,23 +15,23 @@
     <tbody>
       <% @postings.each do |posting| %>
       <tr>
-        <td><%= link_to posting.title.upcase, posting_path(posting) %></td>
-        <td><%= link_to posting.employer.name.upcase, employer_path(posting.employer.username) %></td>
-        <td><%= pluralize(posting.duration, 'WEEK').upcase%></td>
+        <td><%= link_to posting.title, posting_path(posting) %></td>
+        <td><%= link_to posting.employer.name, employer_path(posting.employer.username) %></td>
+        <td><%= pluralize(posting.duration, 'week')%></td>
         <td><%= posting.compensation.upcase %></td>
         <% if current_account && current_account.student %>
         <td>
           <% if posting.applied?(current_account.student) %>
-            <i class="mdi-action-done"></i>
+            <i class="mdi-action-done tooltipped" data-position="left" data-delay="50" data-tooltip="Already applied"></i>
           <% else %>
             <%= link_to posting_posting_applications_path(posting),
-            data: { position: "left",
-              delay: "50",
-              tooltip: "Click here to apply"
-            },
-            method: :post,
-            class: "tooltipped" do %>
-            <i class="mdi-content-send"></i>
+                        data: { position: "left",
+                          delay: "50",
+                          tooltip: "Click here to apply"
+                        },
+                        method: :post,
+                        class: "tooltipped" do %>
+              <i class="mdi-content-send"></i>
            <% end %>
           <% end %>
         </td>

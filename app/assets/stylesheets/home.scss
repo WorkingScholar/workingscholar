@@ -8,17 +8,20 @@
 
 #team {
   padding-bottom: 50px;
+  padding-top: 40px;
 }
 
 #why {
-  background-image: url("https://unsplash.it/2509/1672?image=581&blur");
+  background-image: url("https://unsplash.it/1909/1262?image=442");
   background-size: cover;
   background-position: 50%;
   background-attachment: fixed;
+  padding-top: 25px;
 }
 
 #what {
   padding-bottom: 50px;
+  padding-top: 40px;
 }
 
 #recently-matched {
@@ -26,6 +29,7 @@
   background-size: cover;
   background-position: 50%;
   background-attachment: fixed;
+  padding-top: 40px;
 
   a {
     color: #fff;
@@ -43,14 +47,7 @@
 
 #how {
   padding-bottom: 50px;
-}
-
-#testimonials {
-  background-image: url("https://unsplash.it/4133/2745?image=668");
-  background-size: cover;
-  background-position: 50%;
-  background-attachment: fixed;
-  margin-bottom: 80px;
+  padding-top: 40px;
 }
 
 .headshot img{
