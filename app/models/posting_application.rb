@@ -3,4 +3,8 @@ class PostingApplication < ActiveRecord::Base
 
   belongs_to :posting
   belongs_to :student
+
+  def self.recently_matched(limit)
+    where(matched: true).last(limit)
+  end
 end
