@@ -2,7 +2,7 @@
   <div class="row">
     <div class="section">
       <%= form_for @posting,
-                   url: postings_path(:posting) do |f| %>
+                   method: :post do |f| %>
         <%= render "form", f: f, entry: @posting, button_text: "Create" %>
       <% end %>
     </div>
