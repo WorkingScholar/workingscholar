@@ -5,18 +5,19 @@
 WorkingScholar is a micro-consulting platform that empowers students to
 build their professional experience.
 
+> **WARNING**:
+
+>THE CODE IN THIS PROJECT IS OF ALPHA, PROOF-OF-CONCEPT QUALITY.  THIS PROJECT IS NOT INTENDED FOR PRODUCTION USE.
+
+>ALL RIGHTS REMAIN WITH THEIR HOLDERS.
+
 ## Features
 
 - Job board
 - Rating system
 - Searching
 
-## Contributing
-
-Want to contribute to WorkingScholar?  We welcome
-[pull requests](https://github.com/WorkingScholar/workingscholar/pulls)!
-
-### Requirements
+## Requirements
 
 We use [PostgreSQL](http://www.postgresql.org/) as our datastore.
 
@@ -47,7 +48,7 @@ Start the PostgreSQL server:
 lunchy start postgres
 ```
 
-> **Note**: after a machine reboot, Lunchy is no longer required as the 
+> **Note**: after a machine reboot, Lunchy is no longer required as the
 PostgreSQL server will start automatically thanks to its launch agent in
 `~/Library/LaunchAgents`.
 
